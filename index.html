@@ -302,24 +302,25 @@ function choosePeerStatus(peer,alternatives){
   const element=display&&$(display);
   if(element)element.textContent=peer.status;
 }
+function nextPeerStatusReview(now){
+  const timing=Math.random();
+  // Short, medium, and long pauses, measured in minutes.
+  const [minimum,maximum]=timing<.2?[5,20]:timing<.65?[30,180]:[240,1440];
+  return now+Math.round(rand(minimum,maximum)*60000);
+}
 function schedulePeerStatus(now=Date.now()){
   const settings=state.settings,peer=state.people[0];
   const alternatives=settings.statusReplies&&peer?state.statusTexts.filter(status=>status!==peer.status):[];
-  const savedDue=settings.nextStatusAt;
+  const savedDue=settings.nextStatusReviewAt;
   let due=savedDue;
   if(!alternatives.length){
     due=0;
   }else if(!(savedDue>now)){
-    if(savedDue>0)choosePeerStatus(peer,alternatives);
-    if(state.statusTexts.some(status=>status!==peer.status)){
-      // Draw each interval independently with an average of one minute.
-      due=now+1+Math.floor(-Math.log1p(-Math.random())*60000);
-    }else{
-      due=0;
-    }
+    if(savedDue>0&&Math.random()<.6)choosePeerStatus(peer,alternatives);
+    due=state.statusTexts.some(status=>status!==peer.status)?nextPeerStatusReview(now):0;
   }
   if(due!==savedDue){
-    settings.nextStatusAt=due;
+    settings.nextStatusReviewAt=due;
     save();
   }
   return due||Infinity;
@@ -330,7 +331,13 @@ function normalizeStatusTexts(data){
     throw Error('状态列表格式无效');
   }
   data.statusTexts=[...new Set(data.statusTexts.map(value=>value.trim()))];
-  if(data.settings&&(!Number.isFinite(data.settings.nextStatusAt)||data.settings.nextStatusAt<0))data.settings.nextStatusAt=0;
+  if(data.settings){
+    // Discard deadlines created by the previous, much faster schedule.
+    delete data.settings.nextStatusAt;
+    if(!Number.isFinite(data.settings.nextStatusReviewAt)||data.settings.nextStatusReviewAt<0){
+      data.settings.nextStatusReviewAt=0;
+    }
+  }
 }
 
 function setReplyTab(value){
@@ -340,7 +347,7 @@ function setReplyTab(value){
   render();
 }
 
-const initial=()=>({schema:1,cards:[],groups:[{name:'未分组',blocked:false}],messages:[],stickers:[],emojis:[...starterEmojis],statusTexts:[],moodDays:{},replyQueue:[],people:[{id:'other',name:'对方',avatar:'',status:'在这里',showHeaderName:true,showHeaderStatus:true,patTexts:['{发起者}拍一拍{接收者}肩膀']}],self:{name:'我',avatar:'',status:'在线',showHeaderName:true,showHeaderStatus:true,patTexts:['{发起者}拍一拍{接收者}肩膀']},sounds:[],calls:[],importantDays:[],decisions:[],letters:[],incomingLetters:[],tarotReadings:[],cover:{date:'',texts:[],waitingForCards:true},patFullTextVersion:1,callLogsMigrated:false,settings:{theme:'dark',palette:'wine',accentColor:'',desktopBackground:'',showTyping:true,inlineTime:false,stickerWithText:true,decisionOptions:'',tarotQuestion:'',tarotMode:1,incomingMail:true,mailMinDays:1,mailMaxDays:7,nextIncomingMail:0,paletteVersion:2,fontSize:16,fontFamily:'',fontUrl:'',bubbleCSS:'',background:'',showName:true,showAvatar:true,showTime:true,showRead:true,readStatusVersion:2,typing:'正在输入',delayMin:2,delayMax:8,active:false,activeMin:10,activeMax:30,nextActive:0,noReply:false,noReplyChance:20,quote:false,join:false,notify:false,sound:true,randomSound:false,videoIncoming:true,videoBackground:'',stickerReplies:true,stickerChance:30,emojiReplies:true,statusReplies:true,nextStatusAt:0,patRandom:true,patChance:20}});
+const initial=()=>({schema:1,cards:[],groups:[{name:'未分组',blocked:false}],messages:[],stickers:[],emojis:[...starterEmojis],statusTexts:[],moodDays:{},replyQueue:[],people:[{id:'other',name:'对方',avatar:'',status:'在这里',showHeaderName:true,showHeaderStatus:true,patTexts:['{发起者}拍一拍{接收者}肩膀']}],self:{name:'我',avatar:'',status:'在线',showHeaderName:true,showHeaderStatus:true,patTexts:['{发起者}拍一拍{接收者}肩膀']},sounds:[],calls:[],importantDays:[],decisions:[],letters:[],incomingLetters:[],tarotReadings:[],cover:{date:'',texts:[],waitingForCards:true},patFullTextVersion:1,callLogsMigrated:false,settings:{theme:'dark',palette:'wine',accentColor:'',desktopBackground:'',showTyping:true,inlineTime:false,stickerWithText:true,decisionOptions:'',tarotQuestion:'',tarotMode:1,incomingMail:true,mailMinDays:1,mailMaxDays:7,nextIncomingMail:0,paletteVersion:2,fontSize:16,fontFamily:'',fontUrl:'',bubbleCSS:'',background:'',showName:true,showAvatar:true,showTime:true,showRead:true,readStatusVersion:2,typing:'正在输入',delayMin:2,delayMax:8,active:false,activeMin:10,activeMax:30,nextActive:0,noReply:false,noReplyChance:20,quote:false,join:false,notify:false,sound:true,randomSound:false,videoIncoming:true,videoBackground:'',stickerReplies:true,stickerChance:30,emojiReplies:true,statusReplies:true,nextStatusReviewAt:0,patRandom:true,patChance:20}});
 let state,db,page='home',filter='全部',query='',sort='new',batch=false,selected=new Set(),busy=false,replyTimers=[],activeTimer,toastTimer,saveChain=Promise.resolve(),viewEpoch=0;
 function toast(t){$('#toast').textContent=t;$('#toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('show'),2500)}
 async function init(){try{db=await new Promise((res,rej)=>{let r=indexedDB.open('private-local-desktop',1);r.onupgradeneeded=()=>r.result.createObjectStore('data');r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)});let saved=await new Promise((res,rej)=>{let r=db.transaction('data').objectStore('data').get('all');r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)});state=saved||initial();if(!Array.isArray(state.stickers))state.stickers=[];if(state.settings.readStatusVersion!==2){state.settings.showRead=true;state.settings.readStatusVersion=2;}if(!state.settings.paletteVersion){state.settings.theme='dark';state.settings.paletteVersion=2;}state.settings={...initial().settings,...state.settings};normalizeFeatureData(state);normalizeProfiles();normalizeChatRuntime();normalizeVideoSettings();await save();apply();render();resumeChatRuntime();scheduleActive();navigator.storage?.persist?.().catch(()=>{});}catch(e){document.querySelector('#intro').remove();$('#app').innerHTML='<div class="empty">本地数据库无法打开，请允许此网站存储数据后重试。</div>';console.error(e)}}
@@ -372,7 +379,7 @@ function avatar(p){return p?.avatar?'<img class="avatar" src="'+esc(p.avatar)+'"
 function normalizeProfiles(data=state){let entries=[[data.self,'在线'],...data.people.map(p=>[p,'在这里'])];for(let [person,status] of entries){if(typeof person.status!=='string')person.status=status;if(typeof person.showHeaderName!=='boolean')person.showHeaderName=true;if(typeof person.showHeaderStatus!=='boolean')person.showHeaderStatus=true;if(!Array.isArray(person.patTexts))person.patTexts=['{发起者}拍一拍{接收者}肩膀']}}
 function chatProfile(side){let p=side==='self'?state.self:state.people[0];if(!p)return '';return '<button class="chat-profile '+(side==='self'?'profile-self':'profile-other')+'" onclick="editPerson(\''+side+'\')" aria-label="'+(side==='self'?'编辑我的资料':'编辑对方资料')+'">'+avatar(p)+(p.showHeaderName?'<span class="profile-name">'+esc(p.name)+'</span>':'')+(p.showHeaderStatus&&p.status?'<span class="profile-status">'+esc(p.status)+'</span>':'')+'</button>'}
 
-function renderChat(){let s=state.settings;$('#app').innerHTML='<header class="chat-header"><nav class="chat-toolbar" aria-label="聊天导航">'+ib('back','onclick="go(\'home\')"','返回桌面')+'<button class="chat-peer" onclick="editPerson(\'other\')" aria-label="编辑对方资料">'+(state.people[0].showHeaderName?'<span class="chat-peer-name">'+esc(state.people[0].name)+'</span>':'')+(state.people[0].showHeaderStatus?'<span class="chat-peer-status" id="peerStatus">'+esc(state.people[0].status)+'</span>':'')+'</button>'+ib('more','onclick="chatMenu()"','聊天操作')+'</nav></header><div class="messages" id="messages"></div><div class="typing" aria-live="polite" id="typing">'+(busy&&s.showTyping?'<i>···</i> '+esc(s.typing):'')+'</div><form class="composer" onsubmit="sendMessage(event)"><div class="composer-input"><textarea id="draft" placeholder="写下此刻的心情…" aria-label="消息" rows="1"></textarea><button class="send" type="submit" aria-label="发送">'+icon('send')+'</button></div><div class="composer-tools"><button class="sticker-button" type="button" onclick="openStickerPicker()" aria-label="表情包">'+icon('sticker')+'</button><button class="photo-button" type="button" onclick="sendPhotos()" aria-label="发送图片">'+icon('image')+'</button><button class="video-button" type="button" onclick="startCall(false)" aria-label="视频通话">'+icon('video')+'</button><button class="pat-button" type="button" onclick="openPatPanel()" aria-label="拍一拍">'+icon('pat')+'</button><button class="speak" type="button" onclick="triggerReply()" aria-label="说话">'+icon('chat')+'</button></div></form>';$('#app').style.backgroundImage=s.background?'url('+JSON.stringify(s.background)+')':'';renderMessages()}
+function renderChat(){let s=state.settings;$('#app').innerHTML='<header class="chat-header"><nav class="chat-toolbar" aria-label="聊天导航">'+ib('back','onclick="go(\'home\')"','返回桌面')+'<button class="chat-peer" onclick="editPerson(\'other\')" aria-label="编辑对方资料">'+(state.people[0].showHeaderName?'<span class="chat-peer-name">'+esc(state.people[0].name)+'</span>':'')+(state.people[0].showHeaderStatus?'<span class="chat-peer-status" id="peerStatus">'+esc(state.people[0].status)+'</span>':'')+'</button>'+ib('more','onclick="chatMenu()"','聊天操作')+'</nav></header><div class="messages" id="messages"></div><div class="typing" aria-live="polite" id="typing">'+(busy&&s.showTyping?'<i>···</i> '+esc(s.typing):'')+'</div><form class="composer" onsubmit="sendMessage(event)"><div class="composer-input"><textarea id="draft" aria-label="消息" rows="1"></textarea><button class="send" type="submit" aria-label="发送">'+icon('send')+'</button></div><div class="composer-tools"><button class="sticker-button" type="button" onclick="openStickerPicker()" aria-label="表情包">'+icon('sticker')+'</button><button class="photo-button" type="button" onclick="sendPhotos()" aria-label="发送图片">'+icon('image')+'</button><button class="video-button" type="button" onclick="startCall(false)" aria-label="视频通话">'+icon('video')+'</button><button class="pat-button" type="button" onclick="openPatPanel()" aria-label="拍一拍">'+icon('pat')+'</button><button class="speak" type="button" onclick="triggerReply()" aria-label="说话">'+icon('chat')+'</button></div></form>';$('#app').style.backgroundImage=s.background?'url('+JSON.stringify(s.background)+')':'';renderMessages()}
 function isStickerPlaceholder(text){
   return /^\[表情包\](?:\s|[+＋]?\d|$)/.test(text);
 }
