@@ -302,25 +302,25 @@ function choosePeerStatus(peer,alternatives){
   const element=display&&$(display);
   if(element)element.textContent=peer.status;
 }
-function nextPeerStatusReview(now){
+function nextPeerStatusChange(now){
   const timing=Math.random();
-  // Short, medium, and long pauses, measured in minutes.
-  const [minimum,maximum]=timing<.2?[5,20]:timing<.65?[30,180]:[240,1440];
+  // Prefer shorter intervals, while still allowing a state to last all day.
+  const [minimum,maximum]=timing<.5?[3,20]:timing<.8?[20,180]:[180,1440];
   return now+Math.round(rand(minimum,maximum)*60000);
 }
 function schedulePeerStatus(now=Date.now()){
   const settings=state.settings,peer=state.people[0];
   const alternatives=settings.statusReplies&&peer?state.statusTexts.filter(status=>status!==peer.status):[];
-  const savedDue=settings.nextStatusReviewAt;
+  const savedDue=settings.nextStatusChangeAt;
   let due=savedDue;
   if(!alternatives.length){
     due=0;
   }else if(!(savedDue>now)){
-    if(savedDue>0&&Math.random()<.6)choosePeerStatus(peer,alternatives);
-    due=state.statusTexts.some(status=>status!==peer.status)?nextPeerStatusReview(now):0;
+    if(savedDue>0)choosePeerStatus(peer,alternatives);
+    due=state.statusTexts.some(status=>status!==peer.status)?nextPeerStatusChange(now):0;
   }
   if(due!==savedDue){
-    settings.nextStatusReviewAt=due;
+    settings.nextStatusChangeAt=due;
     save();
   }
   return due||Infinity;
@@ -332,10 +332,11 @@ function normalizeStatusTexts(data){
   }
   data.statusTexts=[...new Set(data.statusTexts.map(value=>value.trim()))];
   if(data.settings){
-    // Discard deadlines created by the previous, much faster schedule.
+    // Recalculate deadlines from schedules that could skip a change.
     delete data.settings.nextStatusAt;
-    if(!Number.isFinite(data.settings.nextStatusReviewAt)||data.settings.nextStatusReviewAt<0){
-      data.settings.nextStatusReviewAt=0;
+    delete data.settings.nextStatusReviewAt;
+    if(!Number.isFinite(data.settings.nextStatusChangeAt)||data.settings.nextStatusChangeAt<0){
+      data.settings.nextStatusChangeAt=0;
     }
   }
 }
@@ -347,7 +348,7 @@ function setReplyTab(value){
   render();
 }
 
-const initial=()=>({schema:1,cards:[],groups:[{name:'未分组',blocked:false}],messages:[],stickers:[],emojis:[...starterEmojis],statusTexts:[],moodDays:{},replyQueue:[],people:[{id:'other',name:'对方',avatar:'',status:'在这里',showHeaderName:true,showHeaderStatus:true,patTexts:['{发起者}拍一拍{接收者}肩膀']}],self:{name:'我',avatar:'',status:'在线',showHeaderName:true,showHeaderStatus:true,patTexts:['{发起者}拍一拍{接收者}肩膀']},sounds:[],calls:[],importantDays:[],decisions:[],letters:[],incomingLetters:[],tarotReadings:[],cover:{date:'',texts:[],waitingForCards:true},patFullTextVersion:1,callLogsMigrated:false,settings:{theme:'dark',palette:'wine',accentColor:'',desktopBackground:'',showTyping:true,inlineTime:false,stickerWithText:true,decisionOptions:'',tarotQuestion:'',tarotMode:1,incomingMail:true,mailMinDays:1,mailMaxDays:7,nextIncomingMail:0,paletteVersion:2,fontSize:16,fontFamily:'',fontUrl:'',bubbleCSS:'',background:'',showName:true,showAvatar:true,showTime:true,showRead:true,readStatusVersion:2,typing:'正在输入',delayMin:2,delayMax:8,active:false,activeMin:10,activeMax:30,nextActive:0,noReply:false,noReplyChance:20,quote:false,join:false,notify:false,sound:true,randomSound:false,videoIncoming:true,videoBackground:'',stickerReplies:true,stickerChance:30,emojiReplies:true,statusReplies:true,nextStatusReviewAt:0,patRandom:true,patChance:20}});
+const initial=()=>({schema:1,cards:[],groups:[{name:'未分组',blocked:false}],messages:[],stickers:[],emojis:[...starterEmojis],statusTexts:[],moodDays:{},replyQueue:[],people:[{id:'other',name:'对方',avatar:'',status:'在这里',showHeaderName:true,showHeaderStatus:true,patTexts:['{发起者}拍一拍{接收者}肩膀']}],self:{name:'我',avatar:'',status:'在线',showHeaderName:true,showHeaderStatus:true,patTexts:['{发起者}拍一拍{接收者}肩膀']},sounds:[],calls:[],importantDays:[],decisions:[],letters:[],incomingLetters:[],tarotReadings:[],cover:{date:'',texts:[],waitingForCards:true},patFullTextVersion:1,callLogsMigrated:false,settings:{theme:'dark',palette:'wine',accentColor:'',desktopBackground:'',showTyping:true,inlineTime:false,stickerWithText:true,decisionOptions:'',tarotQuestion:'',tarotMode:1,incomingMail:true,mailMinDays:1,mailMaxDays:7,nextIncomingMail:0,paletteVersion:2,fontSize:16,fontFamily:'',fontUrl:'',bubbleCSS:'',background:'',showName:true,showAvatar:true,showTime:true,showRead:true,readStatusVersion:2,typing:'正在输入',delayMin:2,delayMax:8,active:false,activeMin:10,activeMax:30,nextActive:0,noReply:false,noReplyChance:20,quote:false,join:false,notify:false,sound:true,randomSound:false,videoIncoming:true,videoBackground:'',stickerReplies:true,stickerChance:30,emojiReplies:true,statusReplies:true,nextStatusChangeAt:0,patRandom:true,patChance:20}});
 let state,db,page='home',filter='全部',query='',sort='new',batch=false,selected=new Set(),busy=false,replyTimers=[],activeTimer,toastTimer,saveChain=Promise.resolve(),viewEpoch=0;
 function toast(t){$('#toast').textContent=t;$('#toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('show'),2500)}
 async function init(){try{db=await new Promise((res,rej)=>{let r=indexedDB.open('private-local-desktop',1);r.onupgradeneeded=()=>r.result.createObjectStore('data');r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)});let saved=await new Promise((res,rej)=>{let r=db.transaction('data').objectStore('data').get('all');r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)});state=saved||initial();if(!Array.isArray(state.stickers))state.stickers=[];if(state.settings.readStatusVersion!==2){state.settings.showRead=true;state.settings.readStatusVersion=2;}if(!state.settings.paletteVersion){state.settings.theme='dark';state.settings.paletteVersion=2;}state.settings={...initial().settings,...state.settings};normalizeFeatureData(state);normalizeProfiles();normalizeChatRuntime();normalizeVideoSettings();await save();apply();render();resumeChatRuntime();scheduleActive();navigator.storage?.persist?.().catch(()=>{});}catch(e){document.querySelector('#intro').remove();$('#app').innerHTML='<div class="empty">本地数据库无法打开，请允许此网站存储数据后重试。</div>';console.error(e)}}
@@ -387,7 +388,7 @@ function renderMessages(){if(page!=='chat')return;let s=state.settings,prev='';$
 let chatRuntimeTimer=null;
 function normalizeChatRuntime(){if(!Array.isArray(state.replyQueue))state.replyQueue=[];for(let m of state.messages){if(m.me&&!m.read&&!Number.isFinite(m.readAt))m.readAt=Date.now()+600}busy=state.replyQueue.some(job=>job.type!=='pat')}
 function updateTyping(){busy=state.replyQueue.some(job=>job.type!=='pat');let el=$('#typing');if(el)el.innerHTML=busy&&state.settings.showTyping?'<i>···</i> '+esc(state.settings.typing):''}
-function scheduleChatRuntime(){ensureIncomingMail();clearTimeout(chatRuntimeTimer);chatRuntimeTimer=null;let next=schedulePeerStatus();for(let m of state.messages){if(m.me&&!m.read&&Number.isFinite(m.readAt))next=Math.min(next,m.readAt)}for(let job of state.replyQueue)next=Math.min(next,job.due);for(let letter of state.letters||[])if(letter.deliveredAt===null)next=Math.min(next,letter.dueAt);if(state.settings.incomingMail&&eligible().length&&state.settings.nextIncomingMail>0)next=Math.min(next,state.settings.nextIncomingMail);next=Math.min(next,nextMidnight());if(Number.isFinite(next))chatRuntimeTimer=setTimeout(runChatRuntime,Math.max(0,next-Date.now()))}
+function scheduleChatRuntime(){ensureIncomingMail();clearTimeout(chatRuntimeTimer);chatRuntimeTimer=null;let next=schedulePeerStatus();for(let m of state.messages){if(m.me&&!m.read&&Number.isFinite(m.readAt))next=Math.min(next,m.readAt)}for(let job of state.replyQueue)next=Math.min(next,job.due);for(let letter of state.letters||[])if(letter.deliveredAt===null)next=Math.min(next,letter.dueAt);if(state.settings.incomingMail&&eligibleMailCards().length&&state.settings.nextIncomingMail>0)next=Math.min(next,state.settings.nextIncomingMail);next=Math.min(next,nextMidnight());if(Number.isFinite(next))chatRuntimeTimer=setTimeout(runChatRuntime,Math.max(0,next-Date.now()))}
 function markMessagesRead(){let changed=false;for(let m of state.messages){if(m.me&&!m.read){m.read=true;delete m.readAt;changed=true}}if(changed){save();renderMessages()}scheduleChatRuntime()}
 function runChatRuntime(){clearTimeout(chatRuntimeTimer);chatRuntimeTimer=null;if(!state)return;let now=Date.now(),coverChanged=ensureDailyCover(),changed=deliverLetters(now)||coverChanged;for(let m of state.messages){if(m.me&&!m.read&&Number.isFinite(m.readAt)&&m.readAt<=now){m.read=true;delete m.readAt;changed=true}}let due=state.replyQueue.filter(job=>job.due<=now).sort((a,b)=>a.due-b.due);state.replyQueue=state.replyQueue.filter(job=>job.due>now);for(let job of due){if(job.type==='pat'){state.messages.push({id:job.id,text:job.text,type:'pat',me:job.pat.actor==='self',read:true,time:Date.now(),pat:job.pat});changed=true;animatePat(job.pat.target);notify(state.people[0].name,job.text);continue}let source=state.messages.find(m=>m.me&&m.id===job.replyTo);if(source){source.read=true;delete source.readAt}let p=state.people.find(p=>p.id===job.person)||state.people[0];if(!p)continue;let stickerReply=job.type==='sticker';state.messages.push({id:job.id,text:stickerReply?'':job.text,type:job.type||'text',sticker:job.sticker||null,image:job.image||null,me:false,person:p.id,name:p.name,avatar:p.avatar,time:Date.now(),quote:stickerReply?null:job.quote});changed=true;playSound();notify(p.name,stickerReply?'发送了一个表情包':job.text)}updateTyping();if(changed){save();renderMessages();if(page==='letters'||(page==='home'||page==='days')&&coverChanged)render()}scheduleChatRuntime();if(due.some(job=>job.type!=='pat')){maybeRandomPat();maybeIncomingCall()}}
 function resumeChatRuntime(){normalizeChatRuntime();runChatRuntime()}
@@ -787,7 +788,7 @@ function letterPaper(text,to,from,sentAt){
     '<footer class="letter-signoff">'+esc(from)+'，'+esc(shortLocalTime(sentAt))+'</footer></article>';
 }
 function postLetter(text){
-  const pool=eligible();
+  const pool=eligibleMailCards();
   if(!pool.length){toast('先添加可用字卡，才能收到回信');return false}
   const now=Date.now();
   state.letters.push({
@@ -808,7 +809,7 @@ function deliverLetters(now){
       notify(other,'收到一封回信');
     }
   }
-  const pool=eligible(),settings=state.settings;
+  const pool=eligibleMailCards(),settings=state.settings;
   if(!settings.incomingMail||!pool.length)return changed;
   let count=0;
   while(settings.nextIncomingMail>0&&settings.nextIncomingMail<=now&&count<365){
@@ -1053,8 +1054,18 @@ function randomCardTexts(pool,count){
   }
   return texts;
 }
-function combineMailCards(pool=eligible()){
-  return cardParagraph(randomCardTexts(pool,Math.floor(rand(2,6))));
+function eligibleMailCards(){
+  return eligible().filter(card=>card.text.trim());
+}
+function combineMailCards(pool=eligibleMailCards()){
+  if(!pool.length)return '';
+  const count=Math.floor(rand(1,Math.min(18,pool.length)+1));
+  const cards=randomCardTexts(pool,count).map(mailParagraph);
+  return cards.map((text,index)=>{
+    if(/[。！？!?…~～；;：:，,、.][”’」』）》】]*$/u.test(text))return text;
+    const punctuation=index===cards.length-1?['！','…','。']:['，','；','！','…','。'];
+    return text+pick(punctuation);
+  }).join('');
 }
 function mailSettings(){modal('来信设置','<label class="row"><span>对方主动来信</span><input class="toggle" id="incomingMailEnabled" type="checkbox" '+(state.settings.incomingMail?'checked':'')+'></label><div class="section-label">来信间隔 · 天</div><div class="two"><label class="field"><span>最短</span><input id="mailMin" type="number" min="1" max="7" step="1" value="'+state.settings.mailMinDays+'"></label><label class="field"><span>最长</span><input id="mailMax" type="number" min="1" max="7" step="1" value="'+state.settings.mailMaxDays+'"></label></div><button class="primary full" id="saveMailSettings">保存</button>');$('#saveMailSettings').onclick=()=>{let s=state.settings,min=Math.max(1,Math.min(7,Number($('#mailMin').value)||1)),max=Math.max(min,Math.min(7,Number($('#mailMax').value)||7)),enabled=$('#incomingMailEnabled').checked;if(s.mailMinDays!==min||s.mailMaxDays!==max||s.incomingMail!==enabled)s.nextIncomingMail=0;s.mailMinDays=min;s.mailMaxDays=max;s.incomingMail=enabled;ensureIncomingMail();save();scheduleChatRuntime();closeModal()}}
 function readIncoming(id){
