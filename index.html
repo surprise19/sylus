@@ -34,17 +34,17 @@ body{background:var(--bg)}.home{isolation:isolate;background:radial-gradient(ell
 html{scrollbar-width:none}html::-webkit-scrollbar{display:none}
 
 /* 统一设置与独立抉择 */
-.settings-tabs{display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:5px;border:1px solid var(--line);padding:5px;border-radius:14px;margin:22px 0 10px;position:sticky;top:8px;background:var(--bg);z-index:3;box-shadow:0 4px 16px #00000006}.settings-tabs button{padding:10px 4px;border-radius:10px;font-size:13px;color:var(--muted);white-space:nowrap}.settings-tabs button.active{background:var(--pink);color:var(--text)}.choice-section{margin:25px 0;padding:21px;border:1px solid var(--line);border-radius:23px;background:var(--panel)}.choice-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:18px}.choice-heading h2{font-size:18px;letter-spacing:3px;font-weight:400;margin:0}.choice-heading>span{font-size:15px;letter-spacing:3px;color:var(--accent)}.choice-heading .motif{width:25px;height:25px;color:var(--accent);stroke-width:1}.coin-scene{width:174px;height:174px;perspective:900px;margin:12px auto 28px}.coin-object{width:100%;height:100%;position:relative;transform-style:preserve-3d;transform:rotateY(0deg);filter:none}.coin-object.show-back{transform:rotateY(180deg)}.coin-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:50%;overflow:hidden}.coin-back{transform:rotateY(180deg)}.coin-engraving{width:100%;height:100%;stroke:none;display:block;overflow:visible}.coin-object.toss-front{animation:tossFront .9s cubic-bezier(.25,.8,.3,1) both}.coin-object.toss-back{animation:tossBack .9s cubic-bezier(.25,.8,.3,1) both}.choice-section .primary{font-size:14px}.choice-section .primary:disabled{opacity:.6;cursor:default}.choice-history{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:17px;min-height:24px}.choice-history span{border:1px solid var(--line);border-radius:50%;width:26px;height:26px;display:grid;place-items:center;color:var(--muted);font-size:11px}.draw-section textarea{min-height:115px;font-size:14px;margin-bottom:12px}.draw-result{margin-top:18px;border:1px solid var(--line);border-radius:15px;padding:22px 15px;background:var(--bg);font-size:23px;line-height:1.7;text-align:center;overflow-wrap:anywhere;animation:arrive .3s}.draw-history .row{padding:11px 3px;color:var(--muted)}.draw-history .row>span{font-size:12px}@keyframes tossFront{0%{transform:translateY(0) rotateY(0deg) scale(1)}40%{transform:translateY(-28px) rotateY(720deg) scale(1.1)}100%{transform:translateY(0) rotateY(1440deg) scale(1)}}@keyframes tossBack{0%{transform:translateY(0) rotateY(0deg) scale(1)}40%{transform:translateY(-28px) rotateY(810deg) scale(1.1)}100%{transform:translateY(0) rotateY(1620deg) scale(1)}}@media(max-width:360px){.choice-section{padding:18px}.coin-scene{width:155px;height:155px}.settings-tabs button{font-size:12px}}@media(prefers-reduced-motion:reduce){.coin-object.toss-front,.coin-object.toss-back{animation-duration:.01ms!important}}
+.settings-tabs{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.55fr) minmax(0,1.55fr);gap:5px;border:1px solid var(--line);padding:5px;border-radius:14px;margin:22px 0 10px;position:sticky;top:8px;background:var(--bg);z-index:3;box-shadow:0 4px 16px #00000006}.settings-tabs button{padding:10px 2px;white-space:nowrap;border-radius:10px;font-size:13px;color:var(--muted);white-space:nowrap}.settings-tabs button.active{background:var(--pink);color:var(--text)}.choice-section{margin:25px 0;padding:21px;border:1px solid var(--line);border-radius:23px;background:var(--panel)}.choice-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:18px}.choice-heading h2{font-size:18px;letter-spacing:3px;font-weight:400;margin:0}.choice-heading>span{font-size:15px;letter-spacing:3px;color:var(--accent)}.choice-heading .motif{width:25px;height:25px;color:var(--accent);stroke-width:1}.coin-scene{width:174px;height:174px;perspective:900px;margin:12px auto 28px}.coin-object{width:100%;height:100%;position:relative;transform-style:preserve-3d;transform:rotateY(0deg);filter:none}.coin-object.show-back{transform:rotateY(180deg)}.coin-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:50%;overflow:hidden}.coin-back{transform:rotateY(180deg)}.coin-engraving{width:100%;height:100%;stroke:none;display:block;overflow:visible}.coin-object.toss-front{animation:tossFront .9s cubic-bezier(.25,.8,.3,1) both}.coin-object.toss-back{animation:tossBack .9s cubic-bezier(.25,.8,.3,1) both}.choice-section .primary{font-size:14px}.choice-section .primary:disabled{opacity:.6;cursor:default}.choice-history{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:17px;min-height:24px}.choice-history span{border:1px solid var(--line);border-radius:50%;width:26px;height:26px;display:grid;place-items:center;color:var(--muted);font-size:11px}.draw-section textarea{min-height:115px;font-size:14px;margin-bottom:12px}.draw-result{margin-top:18px;border:1px solid var(--line);border-radius:15px;padding:22px 15px;background:var(--bg);font-size:23px;line-height:1.7;text-align:center;overflow-wrap:anywhere;animation:arrive .3s}.draw-history .row{padding:11px 3px;color:var(--muted)}.draw-history .row>span{font-size:12px}@keyframes tossFront{0%{transform:translateY(0) rotateY(0deg) scale(1)}40%{transform:translateY(-28px) rotateY(720deg) scale(1.1)}100%{transform:translateY(0) rotateY(1440deg) scale(1)}}@keyframes tossBack{0%{transform:translateY(0) rotateY(0deg) scale(1)}40%{transform:translateY(-28px) rotateY(810deg) scale(1.1)}100%{transform:translateY(0) rotateY(1620deg) scale(1)}}@media(max-width:360px){.choice-section{padding:18px}.coin-scene{width:155px;height:155px}.settings-tabs button{font-size:12px}}@media(prefers-reduced-motion:reduce){.coin-object.toss-front,.coin-object.toss-back{animation-duration:.01ms!important}}
 
 /* 信箱、占卜与完整互动 */
 .cover-quote{position:relative;z-index:1;display:block;text-align:left;width:205px;max-width:62%;padding:0;margin-top:12px}.hero .cover-quote h1{font-size:24px;font-weight:400;letter-spacing:2px;line-height:1.65;white-space:pre-line;overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;margin:15px 0;padding:0;overflow-wrap:anywhere}.cover-full{white-space:pre-wrap;line-height:2;overflow-wrap:anywhere}.composer-tools{grid-template-columns:repeat(5,minmax(0,1fr))}.composer .composer-tools button{flex-direction:column;height:46px;gap:3px;font-size:11px;padding:3px}.composer .composer-tools button svg{width:17px;height:17px}.composer .composer-tools .photo-button{color:var(--accent)}.mail-tabs{display:grid;grid-template-columns:1fr 1fr;gap:5px;border:1px solid var(--line);border-radius:13px;padding:5px;margin:23px 0 10px}.mail-tabs button{padding:10px 4px;border-radius:9px;color:var(--muted);font-size:13px}.mail-tabs button.active{background:var(--pink);color:var(--text)}.mail-actions{display:flex;justify-content:flex-end;margin:12px 0 20px;font-size:12px;color:var(--accent)}.choice-history+.secondary,.draw-history+.secondary{margin-top:15px}.pat-notice button{font-size:.75em;color:#b9b9bd}.letter-paper{overflow-wrap:anywhere}@media(max-width:360px){.hero .cover-quote h1{font-size:21px}.cover-quote{max-width:64%}.composer .composer-tools button{font-size:10px;gap:3px}}
 
 /* 居中称呼与可缩放通话 */
-.chat-header{padding:14px 20px;border-bottom:1px solid var(--line)}.chat-header .chat-toolbar{display:grid;grid-template-columns:32px minmax(0,1fr) 32px;gap:14px;height:auto;min-height:52px;margin:0;align-items:center}.chat-peer{min-width:0;display:flex;align-items:center;flex-direction:column;justify-content:center;gap:5px;padding:0;text-align:center}.chat-peer-name{font-size:18px;letter-spacing:2px;line-height:1.5;max-width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.chat-peer-status{font-size:11px;color:var(--muted);line-height:1.6;white-space:pre-line;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;max-width:100%}.call-minimize{position:absolute;right:44px;width:36px;height:36px;display:grid;place-items:center;border:1px solid #d4a0ba55;border-radius:12px;background:#1b0e1d66;color:#f4d5e5}.call-minimize svg{width:18px;height:18px}.call-mini-actions{display:none}.call-screen.minimized{inset:auto;right:max(14px,calc((100vw - 480px)/2 + 14px));top:104px;bottom:auto;width:122px;height:174px;max-width:122px;margin:0;z-index:70;border:1px solid #b47a9755;border-radius:18px;box-shadow:0 12px 30px #0005;animation:arrive .2s;overflow:hidden}.call-screen.minimized .call-heading,.call-screen.minimized .self-preview,.call-screen.minimized .call-controls,.call-screen.minimized .call-art,.call-screen.minimized .call-orbit{display:none}.call-screen.minimized .call-person{position:relative;display:flex;flex-direction:column;align-items:center;align-self:center;text-align:center;margin:17px 8px 0;padding:0;gap:4px;max-width:106px}.call-screen.minimized .call-person .avatar{width:38px;height:38px;margin:0;border-radius:13px;font-size:17px;box-shadow:none;border:1px solid #c396b1}.call-screen.minimized .call-person h2{font-size:12px;margin:4px 0 0;letter-spacing:1px;max-width:100px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.call-screen.minimized .call-person p{font-size:10px;margin:0;letter-spacing:1px;color:#f0c8df}.call-screen.minimized .call-mini-actions{position:relative;z-index:3;display:flex;justify-content:center;align-items:center;gap:18px;width:100%;margin-top:auto;margin-bottom:12px}.call-mini-actions button{width:29px;height:29px;border-radius:9px;background:#e8b7d03b;color:#ffe7f3;display:grid;place-items:center;padding:0}.call-mini-actions button:last-child{background:#8a2b4d}.call-mini-actions svg{width:16px;height:16px}
+.chat-header{padding:14px 20px;border-bottom:1px solid var(--line)}.chat-header .chat-toolbar{display:grid;grid-template-columns:32px minmax(0,1fr) 32px;gap:14px;height:auto;min-height:52px;margin:0;align-items:center}.chat-peer{min-width:0;display:flex;align-items:center;flex-direction:column;justify-content:center;gap:5px;padding:0;text-align:center}.chat-peer-identity{min-width:0;max-width:100%;display:flex;padding:2px 6px;border-radius:12px}.chat-peer-identity:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.chat-peer-name{font-size:18px;letter-spacing:2px;line-height:1.5;max-width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.chat-peer-status{font-size:11px;color:var(--muted);line-height:1.6;white-space:pre-line;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;max-width:100%}.call-minimize{position:absolute;right:44px;width:36px;height:36px;display:grid;place-items:center;border:1px solid #d4a0ba55;border-radius:12px;background:#1b0e1d66;color:#f4d5e5}.call-minimize svg{width:18px;height:18px}.call-mini-actions{display:none}.call-screen.minimized{inset:auto;right:max(14px,calc((100vw - 480px)/2 + 14px));top:104px;bottom:auto;width:122px;height:174px;max-width:122px;margin:0;z-index:70;border:1px solid #b47a9755;border-radius:18px;box-shadow:0 12px 30px #0005;animation:arrive .2s;overflow:hidden}.call-screen.minimized .call-heading,.call-screen.minimized .self-preview,.call-screen.minimized .call-controls,.call-screen.minimized .call-art,.call-screen.minimized .call-orbit{display:none}.call-screen.minimized .call-person{position:relative;display:flex;flex-direction:column;align-items:center;align-self:center;text-align:center;margin:17px 8px 0;padding:0;gap:4px;max-width:106px}.call-screen.minimized .call-person .avatar{width:38px;height:38px;margin:0;border-radius:13px;font-size:17px;box-shadow:none;border:1px solid #c396b1}.call-screen.minimized .call-person h2{font-size:12px;margin:4px 0 0;letter-spacing:1px;max-width:100px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.call-screen.minimized .call-person p{font-size:10px;margin:0;letter-spacing:1px;color:#f0c8df}.call-screen.minimized .call-mini-actions{position:relative;z-index:3;display:flex;justify-content:center;align-items:center;gap:18px;width:100%;margin-top:auto;margin-bottom:12px}.call-mini-actions button{width:29px;height:29px;border-radius:9px;background:#e8b7d03b;color:#ffe7f3;display:grid;place-items:center;padding:0}.call-mini-actions button:last-child{background:#8a2b4d}.call-mini-actions svg{width:16px;height:16px}
 
 .call-screen.minimized .call-person{touch-action:none;cursor:grab}
 .divination-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:25px 0 20px}.divination-tabs button{min-width:0;display:flex;flex-direction:column;align-items:center;gap:10px;padding:17px 4px;border:1px solid var(--line);border-radius:17px;background:var(--panel);color:var(--muted);font-size:14px;letter-spacing:1px}.divination-tabs button .motif{width:30px;height:30px;stroke-width:1}.divination-tabs button.active{background:var(--pink);border-color:var(--accent);color:var(--text)}.divination-content>.choice-section{margin-top:0}.divination-content{animation:arrive .25s}@media(max-width:360px){.divination-tabs{gap:6px}.divination-tabs button{font-size:13px;letter-spacing:0}}
-/* Icon tools, daily cover, and the two reply libraries */
+/* Icon tools, daily cover, and reply libraries */
 .composer .composer-tools button{height:42px;padding:0}
 .composer .composer-tools button svg{width:20px;height:20px}
 .emoji-glyph{font-family:"Segoe UI Emoji","Apple Color Emoji","Noto Color Emoji",sans-serif}
@@ -55,7 +55,9 @@ html{scrollbar-width:none}html::-webkit-scrollbar{display:none}
 .hero .cover-quote h1{white-space:normal;-webkit-line-clamp:5;margin:10px 0 12px;padding:0}
 .cover-date{display:block}
 .reply-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin:18px 0}
+.reply-content-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}
 .reply-tabs button{min-height:40px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted)}
+.reply-content-tabs button{padding:4px 2px;font-size:.875em}
 .reply-tabs button[aria-pressed="true"]{color:var(--text);border-color:var(--accent);background:var(--pink)}
 .actions.reply-library-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:16px 0}
 .reply-library-actions button{min-width:0;padding:9px 3px;font-size:.86em}
@@ -63,6 +65,10 @@ html{scrollbar-width:none}html::-webkit-scrollbar{display:none}
 label.emoji-chip,label.status-item{cursor:pointer}
 label.emoji-chip input,label.status-item input{accent-color:var(--accent);flex-shrink:0}
 .status-item>span{min-width:0;overflow-wrap:anywhere}
+.diary-group-tabs{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+.diary-group-tabs button{max-width:100%;min-width:0;min-height:36px;border:1px solid var(--line);border-radius:10px;padding:5px 11px;background:var(--panel);color:var(--muted);overflow-wrap:anywhere}
+.diary-group-tabs button[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);background:var(--pink)}
+.diary-group-tabs button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .chat-peer-status:empty{display:none}
 .emoji-list{display:flex;flex-wrap:wrap;gap:8px}
 .emoji-chip{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-width:41px;min-height:41px;padding:4px 9px;border-radius:12px;border:1px solid var(--line);background:var(--panel);font-size:1.2em}
@@ -147,10 +153,71 @@ body.in-chat{overflow:hidden}
 .composer textarea{overflow-y:auto}
 .history-more:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .sticker-library-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}
+
+/* 日记 */
+.diary-spread{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  margin:22px 0 12px;
+}
+.diary-cover{
+  min-width:0;
+  display:grid;
+  justify-items:center;
+  align-content:center;
+  gap:7px;
+  min-height:92px;
+  padding:12px 8px;
+  border:1px solid var(--line);
+  border-radius:15px;
+  color:var(--muted);
+  background:var(--panel);
+}
+.diary-cover[aria-pressed="true"]{
+  border-color:var(--accent);
+  color:var(--accent);
+  background:linear-gradient(115deg,var(--panel),var(--pink));
+}
+.diary-cover:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.diary-cover .motif{width:32px;height:32px;stroke-width:1.3}
+.diary-cover span{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--text)}
+.diary-list{display:grid;gap:8px;margin-bottom:36px}
+.diary-entry{
+  display:block;
+  width:100%;
+  min-width:0;
+  padding:12px 10px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:var(--panel);
+  text-align:left;
+}
+.diary-entry time,.diary-paper time{color:var(--muted);font-size:.78em;font-variant-numeric:tabular-nums}
+.diary-entry time{display:flex;flex-wrap:wrap;gap:2px 6px}
+.diary-entry time span{white-space:nowrap}
+.diary-entry .diary-title{
+  display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  margin-top:6px;font-weight:400;color:var(--accent);
+}
+.diary-preview{
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:3;
+  overflow:hidden;
+  margin-top:6px;
+  font-size:.93em;
+  line-height:1.55;
+  overflow-wrap:anywhere;
+}
+.diary-empty{padding:18px 4px;text-align:center;color:var(--muted);font-size:.9em}
+.diary-paper p{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.9;margin:14px 0 20px}
+.diary-form textarea{min-height:168px}
+@media(max-width:360px){.diary-spread{gap:8px}.diary-entry{padding:10px 8px}}
 </style></head><body><div id="intro"><div class="intro-flower"><svg class="bloom" viewBox="0 0 240 290" aria-hidden="true"><defs><linearGradient id="petalVelvet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f2bdcd"/><stop offset=".48" stop-color="#ba647e"/><stop offset="1" stop-color="#681b31"/></linearGradient><radialGradient id="trumpetDepth"><stop stop-color="#240911"/><stop offset=".55" stop-color="#651c32"/><stop offset="1" stop-color="#d595ab"/></radialGradient></defs><circle class="moon-halo" cx="130" cy="115" r="83"/><path class="stem" d="M113 280c-29-54 18-98 19-143"/><path class="leaf" d="M115 234c-28-39-51-32-43-16l14 1-1 8 15 1 15 6Zm7-41c31-32 55-20 38-7l-11-2-2 8-12-1-13 2Z"/><path d="M113 148c3-39-11-53-31-67l15-1 2-20 23 13 27-25 4 24 27-3-11 24 17 20-31 2-14 39Z" fill="url(#petalVelvet)" stroke="#d09aae" stroke-width="1"/><path d="M82 81c14 8 30 3 40-8 12 3 20-1 27-25-1 26 9 31 31 21-18 14-17 31 6 44-24-10-39 0-45 41-10-35-30-62-59-73Z" fill="url(#trumpetDepth)" stroke="#e6adc1" stroke-width="1.1"/><path d="M82 81c29 9 43 23 59 73M122 73c8 27 10 47 19 81m8-106c-3 41-6 71-8 106m39-85c-24 29-33 52-39 85m45-41c-22 6-35 14-45 41" fill="none" stroke="#efb1c5" stroke-opacity=".45" stroke-width=".8"/><path class="fine-line" d="M28 212C11 178 19 151 42 143c6 31-1 53-14 69Zm0 0 14-69m-10 32 7-4m-10 18 8-4m-10 15 7-4m-3-18-9-7m7 18-8-8"/><path class="spark" d="M196 168v15m-7-7h14M45 78v10m-5-5h10M188 34v8m-4-4h8"/><circle cx="201" cy="210" r="2" fill="#b8647f"/><circle cx="52" cy="119" r="1.5" fill="#b8647f"/></svg></div><h1>此 刻</h1><p>夜色里，私藏你的回声。</p></div><main id="app"></main><dialog id="modal"><div id="modalBody"></div></dialog><div id="toast" role="status"></div><style id="custom"></style><script>'use strict';
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)], uid=()=>globalThis.crypto?.randomUUID?.()||'p'+Date.now().toString(36)+Math.random().toString(36).slice(2)+Math.random().toString(36).slice(2), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const paths={chat:'M5 5h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-6 4V7a2 2 0 0 1 2-2Z M7 10h10 M7 14h6',cards:'M6 3h12v18H6Z M3 6v12 M21 6v12 M9 8h6 M9 12h6 M9 16h3',sliders:'M5 3v7m0 4v7 M12 3v3m0 4v11 M19 3v11m0 4v3 M2 10h6 M9 6h6 M16 14h6',people:'M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z M1 21v-2a7 7 0 0 1 14 0v2 M16 5a4 4 0 0 1 0 8 M18 16a6 6 0 0 1 5 5',flower:'M12 9C3-3-3 10 9 12c-12 2-6 15 3 3 9 12 15-1 3-3 12-2 6-15-3-3Z M12 11v2',box:'M3 7l9-4 9 4v13H3Z M3 7l9 4 9-4 M12 11v12 M8 5l9 4',back:'M15 5l-7 7 7 7',plus:'M12 4v16 M4 12h16',close:'M6 6l12 12 M18 6L6 18',search:'M10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14Z M15 15l6 6',more:'M5 12h.01 M12 12h.01 M19 12h.01',send:'M3 11l18-8-8 18-2-8-8-2Z M11 13l10-10',sun:'M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10 M12 1v2 M12 21v2 M1 12h2 M21 12h2 M4 4l2 2 M18 18l2 2 M4 20l2-2 M18 6l2-2',moon:'M20 16A9 9 0 0 1 8 4a9 9 0 1 0 12 12Z',trash:'M3 6h18 M9 6V3h6v3 M6 6l1 15h10l1-15 M10 10v7 M14 10v7',download:'M12 3v12 M7 10l5 5 5-5 M4 16v5h16v-5',upload:'M12 16V4 M7 9l5-5 5 5 M4 16v5h16v-5',check:'M5 12l4 4L19 6',sound:'M4 9h4l5-4v14l-5-4H4Z M17 8a6 6 0 0 1 0 8 M20 5a10 10 0 0 1 0 14',edit:'M4 20l4-1L21 6l-3-3L5 16l-1 4Z M15 6l3 3'};
-const gothicMotifs={"raven":"<path d=\"M13 44c5-10 8-20 20-21 0-8 5-13 11-12 5 0 8 4 9 7l8 5-10 3c-1 10-8 18-20 20l-15 8 4-11-11 4Z\" fill=\"currentColor\" stroke=\"none\"/><path d=\"M35 28c-2 8-7 13-16 17m15 1-2 10m5-10 2 9m-10 1h7m0-1h7\"/><circle cx=\"46\" cy=\"18\" r=\"1.7\" fill=\"var(--pink)\" stroke=\"none\"/>","feather":"<path d=\"M13 55C19 35 35 15 53 6c3 11-1 22-8 29l-10 1 4 4c-6 5-14 7-22 9\" fill=\"currentColor\" fill-opacity=\".08\"/><path d=\"M13 55C23 38 36 23 53 6M23 42l-2-9m8 2-3-11m10 4-3-12m-3 21 13-2M37 27l13-2M43 19l10-2\"/>","dragon":"<path d=\"M29 33C21 20 12 14 3 10l5 15 2-4 5 14 4-4 7 9M34 28C39 15 48 9 60 6l-6 16-4-3-3 14-6-4-5 11\" fill=\"currentColor\" fill-opacity=\".13\"/><path d=\"M29 33c3-4 4-9 2-13l4-6 1 7 5 2 6 7-9 1-2 11c-2 10-9 15-18 10-5-3-8-1-7 3 1 4 6 4 8 1M30 43l-4 6m10-7 4 6m-15 1h5m9-1h5M33 20l-5-6 2 10\"/><path d=\"M15 16l5 13m31-14-10 11M28 49c0 6 2 9 8 9\"/><circle cx=\"38\" cy=\"26\" r=\"1\" fill=\"var(--accent)\" stroke=\"none\"/>","datura":"<path d=\"M30 57c4-11 7-19 3-28M32 44c-13-16-19-9-10-1l10 4m2-10c12-13 16-7 8-1l-9 4\"/><path d=\"M32 31C25 27 20 18 12 19l5-7 1-8 10 5L39 5l-1 9 7 6c-8 0-10 6-13 11Z\" fill=\"currentColor\" fill-opacity=\".12\"/><path d=\"M12 19l15-6 5 18 2-15 11 4M18 4l9 9 12-8M17 12l10 1m7 3 4-2\"/><path d=\"M51 40v8m-4-4h8\"/>","rose":"<path d=\"M32 56V33m0 15c-12-15-19-8-10-2l10 5m1-10c14-13 19-6 9-1l-9 4\"/><path d=\"M32 34C15 34 10 23 17 17c-3-7 5-13 12-10 6-6 15-1 16 5 9 0 11 12 4 16-3 7-11 9-17 6Z\" fill=\"currentColor\" fill-opacity=\".08\"/><path d=\"M32 34c-7-4-13-13-7-18 8-7 17 3 13 9-5 6-14-3-9-7m9 7c6 0 10-6 7-13M25 16l-8 1m8 12c-6 1-10-4-8-12\"/>","reliquary":"<path d=\"M15 25h34v30H15Z M12 25l4-8h32l4 8 M14 35h36M27 39v8h10v-8\"/><path d=\"M32 17C19 6 24 1 30 6l2 5 2-5c6-5 11 0-2 11Z\" fill=\"currentColor\" fill-opacity=\".1\"/><path d=\"M8 6v7m-3-3h6m43 0v6m-3-3h6\"/>"};
+const gothicMotifs={journal:'<path d="M12 13h31a5 5 0 0 1 5 5v34H17a5 5 0 0 1-5-5V13Z" fill="currentColor" fill-opacity=".1"/><path d="M18 13v30m-6 5a5 5 0 0 1 5-5h31m-24-9h15m-15-5h7m-7 22v7l4-2 4 2v-7M35 23c4-7 10-12 18-14-1 9-7 15-18 18m-3 3L51 11"/>',"raven":"<path d=\"M13 44c5-10 8-20 20-21 0-8 5-13 11-12 5 0 8 4 9 7l8 5-10 3c-1 10-8 18-20 20l-15 8 4-11-11 4Z\" fill=\"currentColor\" stroke=\"none\"/><path d=\"M35 28c-2 8-7 13-16 17m15 1-2 10m5-10 2 9m-10 1h7m0-1h7\"/><circle cx=\"46\" cy=\"18\" r=\"1.7\" fill=\"var(--pink)\" stroke=\"none\"/>","feather":"<path d=\"M13 55C19 35 35 15 53 6c3 11-1 22-8 29l-10 1 4 4c-6 5-14 7-22 9\" fill=\"currentColor\" fill-opacity=\".08\"/><path d=\"M13 55C23 38 36 23 53 6M23 42l-2-9m8 2-3-11m10 4-3-12m-3 21 13-2M37 27l13-2M43 19l10-2\"/>","dragon":"<path d=\"M29 33C21 20 12 14 3 10l5 15 2-4 5 14 4-4 7 9M34 28C39 15 48 9 60 6l-6 16-4-3-3 14-6-4-5 11\" fill=\"currentColor\" fill-opacity=\".13\"/><path d=\"M29 33c3-4 4-9 2-13l4-6 1 7 5 2 6 7-9 1-2 11c-2 10-9 15-18 10-5-3-8-1-7 3 1 4 6 4 8 1M30 43l-4 6m10-7 4 6m-15 1h5m9-1h5M33 20l-5-6 2 10\"/><path d=\"M15 16l5 13m31-14-10 11M28 49c0 6 2 9 8 9\"/><circle cx=\"38\" cy=\"26\" r=\"1\" fill=\"var(--accent)\" stroke=\"none\"/>","datura":"<path d=\"M30 57c4-11 7-19 3-28M32 44c-13-16-19-9-10-1l10 4m2-10c12-13 16-7 8-1l-9 4\"/><path d=\"M32 31C25 27 20 18 12 19l5-7 1-8 10 5L39 5l-1 9 7 6c-8 0-10 6-13 11Z\" fill=\"currentColor\" fill-opacity=\".12\"/><path d=\"M12 19l15-6 5 18 2-15 11 4M18 4l9 9 12-8M17 12l10 1m7 3 4-2\"/><path d=\"M51 40v8m-4-4h8\"/>","rose":"<path d=\"M32 56V33m0 15c-12-15-19-8-10-2l10 5m1-10c14-13 19-6 9-1l-9 4\"/><path d=\"M32 34C15 34 10 23 17 17c-3-7 5-13 12-10 6-6 15-1 16 5 9 0 11 12 4 16-3 7-11 9-17 6Z\" fill=\"currentColor\" fill-opacity=\".08\"/><path d=\"M32 34c-7-4-13-13-7-18 8-7 17 3 13 9-5 6-14-3-9-7m9 7c6 0 10-6 7-13M25 16l-8 1m8 12c-6 1-10-4-8-12\"/>","reliquary":"<path d=\"M15 25h34v30H15Z M12 25l4-8h32l4 8 M14 35h36M27 39v8h10v-8\"/><path d=\"M32 17C19 6 24 1 30 6l2 5 2-5c6-5 11 0-2 11Z\" fill=\"currentColor\" fill-opacity=\".1\"/><path d=\"M8 6v7m-3-3h6m43 0v6m-3-3h6\"/>"};
 function icon(n){if(gothicMotifs[n])return '<svg class="motif" viewBox="0 0 64 64" aria-hidden="true">'+gothicMotifs[n]+'</svg>';return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="'+paths[n]+'"/></svg>'}function ib(n,action,label){return '<button class="icon-button" aria-label="'+label+'" '+action+'>'+icon(n)+'</button>'}
 
 const starterEmojis=['🌙','🖤','🌹','✨','☁️','🙂','🥰','😌','🥺','😴','🌧️','💭'];
@@ -176,19 +243,29 @@ function chooseReply(pool,canSticker,canEmoji){
   const text=emoji&&(!pool.length||Math.random()<.5)?emoji:pick(pool).text+emoji;
   return {text,type:'text',sticker:null};
 }
-const replyLibraryNames={emojis:'Emoji',statusTexts:'状态'};
-let replyDeleteMode='';
+const replyLibraryNames={emojis:'Emoji',statusTexts:'状态',diaryCards:'日记字卡'};
+const DIARY_CARD_MAX_LENGTH=500;
+const DIARY_UNGROUPED='未分组', DIARY_GROUP_MAX_LENGTH=40;
+let replyDeleteMode='',selectedDiaryGroup=DIARY_UNGROUPED;
 const selectedReplyItems=new Set();
 function clearReplySelection(){
   replyDeleteMode='';
   selectedReplyItems.clear();
 }
+function diaryCardGroup(text){
+  return state.diaryCardGroups[text]||DIARY_UNGROUPED;
+}
+function visibleReplyItems(key){
+  if(key!=='diaryCards')return state[key];
+  return state.diaryCards.filter(text=>diaryCardGroup(text)===selectedDiaryGroup);
+}
 function replyLibraryActions(key){
+  const count=visibleReplyItems(key).length;
   const args="'"+key+"'";
   if(replyDeleteMode===key){
     return '<div class="actions reply-library-actions">'+
       '<button type="button" class="secondary" id="replySelectAll" onclick="toggleAllReplyItems('+args+')">'+
-      (selectedReplyItems.size===state[key].length?'取消全选':'全选')+'</button>'+
+      (selectedReplyItems.size===count?'取消全选':'全选')+'</button>'+
       '<button type="button" class="danger" id="replyDeleteSelected" onclick="confirmReplyItemDeletion('+args+')"'+
       (selectedReplyItems.size?'':' disabled')+'>删除所选'+(selectedReplyItems.size?' '+selectedReplyItems.size:'')+'</button>'+
       '<button type="button" class="secondary" onclick="toggleReplyDeleteMode('+args+')">完成</button></div>';
@@ -197,7 +274,7 @@ function replyLibraryActions(key){
     '<button type="button" class="primary" onclick="openReplyItemEditor('+args+',false)">单独添加</button>'+
     '<button type="button" class="secondary" onclick="openReplyItemEditor('+args+',true)">批量添加</button>'+
     '<button type="button" class="secondary" onclick="toggleReplyDeleteMode('+args+')"'+
-    (state[key].length?'':' disabled')+'>批量删除</button></div>';
+    (count?'':' disabled')+'>批量删除</button></div>';
 }
 function replyItemCheckbox(key,index,value){
   return '<input type="checkbox" aria-label="选择 '+esc(value)+'"'+(selectedReplyItems.has(value)?' checked':'')+
@@ -214,39 +291,115 @@ function emojiPage(){
   return '<div class="panel emoji-panel">'+toggle('emojiReplies','对方随机使用 Emoji')+'</div>'+
     replyLibraryActions('emojis')+(items?'<div class="emoji-list">'+items+'</div>':'<div class="empty">还没有 Emoji</div>');
 }
-function statusPage(){
-  const selecting=replyDeleteMode==='statusTexts';
-  const items=state.statusTexts.map((status,index)=>{
-    const label='<span>'+esc(status)+'</span>';
-    if(selecting)return '<label class="row status-item">'+label+replyItemCheckbox('statusTexts',index,status)+'</label>';
-    return '<div class="row status-item">'+label+
-      ib('trash','type="button" onclick="removeReplyItem(\'statusTexts\','+index+')"','删除状态：'+esc(status))+'</div>';
+function textReplyLibrary(key){
+  const name=replyLibraryNames[key],selecting=replyDeleteMode===key,diary=key==='diaryCards';
+  const items=state[key].flatMap((value,index)=>{
+    if(diary&&diaryCardGroup(value)!==selectedDiaryGroup)return [];
+    const label='<span>'+esc(value)+'</span>';
+    if(selecting)return '<label class="row status-item">'+label+replyItemCheckbox(key,index,value)+'</label>';
+    const move=diary&&state.diaryGroups.length
+      ?ib('edit','type="button" onclick="moveDiaryCard('+index+')"','移动日记字卡：'+esc(value)):'';
+    return '<div class="row status-item">'+label+move+
+      ib('trash','type="button" onclick="removeReplyItem(\''+key+'\','+index+')"','删除'+name+'：'+esc(value))+'</div>';
   }).join('');
+  return replyLibraryActions(key)+(items?'<div class="panel">'+items+'</div>':'<div class="empty">暂无'+name+'</div>');
+}
+function statusPage(){
   return '<div class="panel">'+toggle('statusReplies','对方随机切换状态')+
     '<div class="row status-item"><span>当前状态 · <span id="statusPreview">'+esc(displayedPeerStatus()||'未设置')+'</span></span></div></div>'+
-    replyLibraryActions('statusTexts')+(items?'<div class="panel">'+items+'</div>':'<div class="empty">还没有状态</div>');
+    textReplyLibrary('statusTexts');
+}
+function diaryLibraryPage(){
+  if(!state.diaryGroups.includes(selectedDiaryGroup))selectedDiaryGroup=DIARY_UNGROUPED;
+  const tabs=[DIARY_UNGROUPED,...state.diaryGroups].map((name,index)=>
+    '<button type="button" id="diaryGroupTab-'+index+'" aria-pressed="'+(name===selectedDiaryGroup)+
+    '" onclick="selectDiaryGroup('+index+')">'+esc(name)+'</button>').join('');
+  return '<div class="panel">'+toggle('peerDiaryEnabled','对方自动写日记')+
+    '<div class="row"><span>分组</span><button type="button" onclick="manageDiaryGroups()">管理分组</button></div></div>'+
+    '<nav class="diary-group-tabs" aria-label="日记字卡分组">'+tabs+'</nav>'+textReplyLibrary('diaryCards');
+}
+function selectDiaryGroup(index){
+  selectedDiaryGroup=[DIARY_UNGROUPED,...state.diaryGroups][index];
+  clearReplySelection();
+  render();
+  $('#diaryGroupTab-'+index).focus();
+}
+function diaryGroupField(label,current=DIARY_UNGROUPED){
+  const options=[DIARY_UNGROUPED,...state.diaryGroups].map(name=>
+    '<option value="'+esc(name)+'"'+(name===current?' selected':'')+'>'+esc(name)+'</option>').join('');
+  return '<label class="field"><span>'+label+'</span><select id="diaryCardGroup" aria-label="'+label+'">'+options+'</select></label>';
+}
+function manageDiaryGroups(){
+  const list=state.diaryGroups.map((name,index)=>'<div class="row status-item"><span>'+esc(name)+'</span>'+
+    ib('trash','type="button" onclick="removeDiaryGroup('+index+')"','删除分组：'+esc(name))+'</div>').join('');
+  modal('日记字卡分组',list+'<form id="diaryGroupForm" class="actions">'+
+    '<input id="newDiaryGroup" placeholder="新分组名称" aria-label="新分组名称" maxlength="'+DIARY_GROUP_MAX_LENGTH+'" required>'+
+    '<button type="submit" class="primary">新建分组</button></form>');
+  $('#diaryGroupForm').onsubmit=event=>{
+    event.preventDefault();
+    const name=$('#newDiaryGroup').value.trim();
+    if(!name)return toast('请填写分组名称');
+    if(name===DIARY_UNGROUPED||state.diaryGroups.includes(name))return toast('分组已存在');
+    state.diaryGroups.push(name);
+    selectedDiaryGroup=name;
+    clearReplySelection();
+    save();
+    closeModal();
+    render();
+  };
+}
+function removeDiaryGroup(index){
+  const name=state.diaryGroups[index];
+  if(!name)return;
+  confirmAction('删除「'+esc(name)+'」并将字卡移至未分组？',()=>{
+    state.diaryGroups=state.diaryGroups.filter(group=>group!==name);
+    clearReplySelection();
+    for(const [text,group] of Object.entries(state.diaryCardGroups)){
+      if(group===name)delete state.diaryCardGroups[text];
+    }
+    save();
+    render();
+  });
+}
+function moveDiaryCard(index){
+  const text=state.diaryCards[index];
+  if(text===undefined)return;
+  modal('移动日记字卡','<form id="moveDiaryCardForm">'+diaryGroupField('移至分组',state.diaryCardGroups[text])+
+    '<button type="submit" class="primary full">保存</button></form>');
+  $('#moveDiaryCardForm').onsubmit=event=>{
+    event.preventDefault();
+    const group=$('#diaryCardGroup').value;
+    if(state.diaryGroups.includes(group))state.diaryCardGroups[text]=group;
+    else delete state.diaryCardGroups[text];
+    save();
+    closeModal();
+    render();
+  };
 }
 function openReplyItemEditor(key,multiple){
   const name=replyLibraryNames[key],emoji=key==='emojis';
+  const maxLength=emoji?64:key==='diaryCards'?DIARY_CARD_MAX_LENGTH:160;
   const field=multiple
     ? '<textarea id="replyItemInput" rows="7" aria-label="'+name+'内容" placeholder="'+
-      (emoji?'粘贴多个 Emoji，可用空格或换行分隔':'每行输入一条状态')+'" required></textarea>'
+      (emoji?'粘贴多个 Emoji，可用空格或换行分隔':'每行输入一条'+name)+'" required></textarea>'
     : '<input class="full" id="replyItemInput" aria-label="'+name+'内容" placeholder="'+
-      (emoji?'输入一个 Emoji':'输入一条状态')+'" maxlength="'+(emoji?64:160)+'" required>';
-  modal((multiple?'批量添加':'添加')+name,'<form id="replyItemForm">'+field+
+      (emoji?'输入一个 Emoji':'输入一条'+name)+'" maxlength="'+maxLength+'" required>';
+  const groups=key==='diaryCards'?diaryGroupField('加入分组',selectedDiaryGroup):'';
+  modal((multiple?'批量添加':'添加')+name,'<form id="replyItemForm">'+groups+field+
     '<div class="actions"><button type="submit" class="primary">添加</button></div></form>');
   $('#replyItemForm').onsubmit=event=>{
     event.preventDefault();
-    addReplyItems(key,multiple,$('#replyItemInput').value);
+    addReplyItems(key,multiple,$('#replyItemInput').value,key==='diaryCards'?$('#diaryCardGroup').value:undefined);
   };
 }
-function addReplyItems(key,multiple,input){
+function addReplyItems(key,multiple,input,group){
   const emoji=key==='emojis';
+  const maxLength=key==='diaryCards'?DIARY_CARD_MAX_LENGTH:160;
   const items=emoji
     ? parseEmojiInput(multiple?input.replace(/[,，、;；]/g,' '):input)
     : input.split(/\r\n?|\n/).map(line=>line.trim()).filter(Boolean);
-  if(!items.length||(!multiple&&items.length!==1)||!items.every(emoji?validEmoji:value=>value.length<=160)){
-    return toast(emoji?(multiple?'请只输入 Emoji 表情':'请输入一个 Emoji'):'每条状态需为 1 至 160 字');
+  if(!items.length||(!multiple&&items.length!==1)||!items.every(emoji?validEmoji:value=>value.length<=maxLength)){
+    return toast(emoji?(multiple?'请只输入 Emoji 表情':'请输入一个 Emoji'):'每条'+replyLibraryNames[key]+'需为 1 至 '+maxLength+' 字');
   }
   const seen=new Set(state[key]);
   const additions=items.filter(value=>{
@@ -256,7 +409,14 @@ function addReplyItems(key,multiple,input){
   });
   if(!additions.length)return toast('这些内容已在列表中');
   state[key]=state[key].concat(additions);
-  if(!emoji)scheduleChatRuntime();
+  if(key==='diaryCards'){
+    selectedDiaryGroup=state.diaryGroups.includes(group)?group:DIARY_UNGROUPED;
+    if(selectedDiaryGroup!==DIARY_UNGROUPED){
+      for(const text of additions)state.diaryCardGroups[text]=selectedDiaryGroup;
+    }
+  }
+  if(key==='statusTexts')scheduleChatRuntime();
+  if(key==='diaryCards')runChatRuntime();
   save();
   closeModal();
   render();
@@ -265,7 +425,7 @@ function addReplyItems(key,multiple,input){
 }
 function toggleReplyDeleteMode(key){
   if(replyDeleteMode===key)clearReplySelection();
-  else if(state[key].length){
+  else if(visibleReplyItems(key).length){
     clearReplySelection();
     replyDeleteMode=key;
   }
@@ -279,13 +439,13 @@ function toggleReplyItem(key,index,checked){
   const button=$('#replyDeleteSelected');
   button.disabled=selectedReplyItems.size===0;
   button.textContent='删除所选'+(selectedReplyItems.size?' '+selectedReplyItems.size:'');
-  $('#replySelectAll').textContent=selectedReplyItems.size===state[key].length?'取消全选':'全选';
+  $('#replySelectAll').textContent=selectedReplyItems.size===visibleReplyItems(key).length?'取消全选':'全选';
 }
 function toggleAllReplyItems(key){
   if(replyDeleteMode!==key)return;
-  const selectAll=selectedReplyItems.size!==state[key].length;
+  const items=visibleReplyItems(key),selectAll=selectedReplyItems.size!==items.length;
   selectedReplyItems.clear();
-  if(selectAll)state[key].forEach(value=>selectedReplyItems.add(value));
+  if(selectAll)items.forEach(value=>selectedReplyItems.add(value));
   render();
 }
 function removeReplyItem(key,index){
@@ -299,8 +459,10 @@ function confirmReplyItemDeletion(key){
 }
 function deleteReplyItems(key,values){
   state[key]=state[key].filter(value=>!values.has(value));
+  if(key==='diaryCards')for(const text of values)delete state.diaryCardGroups[text];
   clearReplySelection();
   if(key==='statusTexts')scheduleChatRuntime();
+  if(key==='diaryCards')runChatRuntime();
   save();
   render();
 }
@@ -368,10 +530,10 @@ function setReplyTab(value){
   render();
 }
 
-const initial=()=>({schema:1,chatDraft:'',cards:[],groups:[{name:'未分组',blocked:false}],messages:[],stickerLibraries:{self:[],other:[]},emojis:[...starterEmojis],statusTexts:[],moodDays:{},replyQueue:[],people:[{id:'other',name:'对方',avatar:'',status:'在这里',showHeaderName:true,showHeaderStatus:true,patTexts:['{发起者}拍一拍{接收者}肩膀']}],self:{name:'我',avatar:'',status:'在线',showHeaderName:true,showHeaderStatus:true,patTexts:['{发起者}拍一拍{接收者}肩膀']},sounds:[],calls:[],importantDays:[],decisions:[],letters:[],incomingLetters:[],tarotReadings:[],cover:{date:'',texts:[],waitingForCards:true},patFullTextVersion:1,callLogsMigrated:false,settings:{theme:'dark',palette:'wine',accentColor:'',desktopBackground:'',showTyping:true,inlineTime:false,stickerWithText:true,decisionOptions:'',tarotQuestion:'',tarotMode:1,incomingMail:true,mailMinDays:1,mailMaxDays:7,nextIncomingMail:0,paletteVersion:2,fontSize:16,fontFamily:'',fontUrl:'',bubbleCSS:'',background:'',showName:true,showAvatar:true,showTime:true,showRead:true,readStatusVersion:2,typing:'正在输入',delayMin:2,delayMax:8,active:false,activeMin:10,activeMax:30,nextActive:0,noReply:false,noReplyChance:20,quote:false,join:false,notify:false,sound:true,randomSound:false,videoIncoming:true,videoBackground:'',stickerReplies:true,stickerChance:30,emojiReplies:true,statusReplies:true,peerStatusText:null,nextStatusChangeAt:0,patRandom:true,patChance:20}});
+const initial=()=>({schema:1,chatDraft:'',cards:[],groups:[{name:'未分组',blocked:false}],messages:[],stickerLibraries:{self:[],other:[]},emojis:[...starterEmojis],statusTexts:[],diaryCards:[],diaryGroups:[],diaryCardGroups:Object.create(null),moodDays:{},diary:{self:[],other:[],nextAt:0,draft:{title:'',text:''}},replyQueue:[],people:[{id:'other',name:'对方',avatar:'',status:'在这里',showHeaderName:true,showHeaderStatus:true,patTexts:['{发起者}拍一拍{接收者}肩膀']}],self:{name:'我',avatar:'',status:'在线',showHeaderName:true,showHeaderStatus:true,patTexts:['{发起者}拍一拍{接收者}肩膀']},sounds:[],calls:[],importantDays:[],decisions:[],letters:[],incomingLetters:[],tarotReadings:[],cover:{date:'',texts:[],waitingForCards:true},patFullTextVersion:1,callLogsMigrated:false,settings:{theme:'dark',palette:'wine',accentColor:'',desktopBackground:'',showTyping:true,peerDiaryEnabled:true,inlineTime:false,stickerWithText:true,decisionOptions:'',tarotQuestion:'',tarotMode:1,incomingMail:true,mailMinDays:1,mailMaxDays:7,nextIncomingMail:0,paletteVersion:2,fontSize:16,fontFamily:'',fontUrl:'',bubbleCSS:'',background:'',showName:true,showAvatar:true,showTime:true,showRead:true,readStatusVersion:2,typing:'正在输入',delayMin:2,delayMax:8,active:false,activeMin:10,activeMax:30,nextActive:0,noReply:false,noReplyChance:20,quote:false,join:false,notify:false,sound:true,randomSound:false,videoIncoming:true,videoBackground:'',stickerReplies:true,stickerChance:30,emojiReplies:true,statusReplies:true,peerStatusText:null,nextStatusChangeAt:0,patRandom:true,patChance:20}});
 let state,db,page='home',filter='全部',query='',sort='new',batch=false,selected=new Set(),busy=false,replyTimers=[],activeTimer,toastTimer,saveChain=Promise.resolve(),viewEpoch=0;
 function toast(t){$('#toast').textContent=t;$('#toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('show'),2500)}
-async function init(){try{db=await new Promise((res,rej)=>{let r=indexedDB.open('private-local-desktop',1);r.onupgradeneeded=()=>r.result.createObjectStore('data');r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)});let saved=await new Promise((res,rej)=>{let r=db.transaction('data').objectStore('data').get('all');r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)});state=saved||initial();if(state.settings.readStatusVersion!==2){state.settings.showRead=true;state.settings.readStatusVersion=2;}if(!state.settings.paletteVersion){state.settings.theme='dark';state.settings.paletteVersion=2;}state.settings={...initial().settings,...state.settings};normalizeFeatureData(state);normalizeProfiles();normalizeChatRuntime();normalizeVideoSettings();restoreChatDraft();await save();apply();render();resumeChatRuntime();scheduleActive();navigator.storage?.persist?.().catch(()=>{});}catch(e){document.querySelector('#intro').remove();$('#app').innerHTML='<div class="empty">本地数据库无法打开，请允许此网站存储数据后重试。</div>';console.error(e)}}
+async function init(){try{db=await new Promise((res,rej)=>{let r=indexedDB.open('private-local-desktop',1);r.onupgradeneeded=()=>r.result.createObjectStore('data');r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)});let saved=await new Promise((res,rej)=>{let r=db.transaction('data').objectStore('data').get('all');r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)});state=saved||initial();if(state.settings.readStatusVersion!==2){state.settings.showRead=true;state.settings.readStatusVersion=2;}if(!state.settings.paletteVersion){state.settings.theme='dark';state.settings.paletteVersion=2;}state.settings={...initial().settings,...state.settings};normalizeFeatureData(state);normalizeProfiles();normalizeChatRuntime();normalizeVideoSettings();restoreChatDraft();restoreDiaryDraft();await save();apply();render();resumeChatRuntime();scheduleActive();navigator.storage?.persist?.().catch(()=>{});}catch(e){document.querySelector('#intro').remove();$('#app').innerHTML='<div class="empty">本地数据库无法打开，请允许此网站存储数据后重试。</div>';console.error(e)}}
 let saveRevision=0,savedRevision=0,saveRunning=false;
 function save(){
   saveRevision++;
@@ -457,21 +619,23 @@ matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>state&&
 let settingsTab='appearance',replyTab='cards';
 function go(p){captureChatDraft();resumeChatRuntime();if(page==='settings')clearReplySelection();if(page==='decisions'){tarotShowingResult=false;save()}if(['appearance','behavior','cards','people'].includes(p)){settingsTab=p==='people'?'appearance':p;if(p==='cards')replyTab='cards';p='settings'}page=p;viewEpoch++;render();window.scrollTo({top:0,behavior:'instant'});if(p==='chat')maybeIncomingCall()}
 function header(title,en,extra=''){let back='home';return '<header class="page-head">'+ib('back','onclick="go(\''+back+'\')"','返回')+'<div class="head-title"><h1>'+title+'</h1></div>'+extra+'</header>'}
-function render(){if(!state)return;document.body.classList.toggle('in-chat',page==='chat');let app=$('#app');if(page!=='chat')app.style.backgroundImage='';app.className=page==='chat'?'chat':'page';if(page==='home'){app.className='home';app.innerHTML=home();if(state.settings.desktopBackground)app.style.backgroundImage='linear-gradient(var(--home-shade),var(--home-shade)),url('+JSON.stringify(state.settings.desktopBackground)+')'}else if(page==='chat'){renderChat();return}else if(page==='settings'){app.innerHTML=settingsPage();if(settingsTab==='cards'&&replyTab==='cards')bindCards();else bindSettings()}else if(page==='data'){app.innerHTML=dataPage();refreshStorageStatus()}else if(page==='decisions'){app.innerHTML=decisionsPage();bindDecisions()}else if(page==='days'){app.innerHTML=calendarPage()}else if(page==='letters'){app.innerHTML=lettersPage()}}
+function render(){if(!state)return;document.body.classList.toggle('in-chat',page==='chat');let app=$('#app');if(page!=='chat')app.style.backgroundImage='';app.className=page==='chat'?'chat':'page';if(page==='home'){app.className='home';app.innerHTML=home();if(state.settings.desktopBackground)app.style.backgroundImage='linear-gradient(var(--home-shade),var(--home-shade)),url('+JSON.stringify(state.settings.desktopBackground)+')'}else if(page==='chat'){renderChat();return}else if(page==='settings'){app.innerHTML=settingsPage();if(settingsTab==='cards'&&replyTab==='cards')bindCards();else bindSettings()}else if(page==='data'){app.innerHTML=dataPage();refreshStorageStatus()}else if(page==='decisions'){app.innerHTML=decisionsPage();bindDecisions()}else if(page==='days'){app.innerHTML=calendarPage()}else if(page==='letters'){app.innerHTML=lettersPage()}else if(page==='diary'){app.innerHTML=diaryPage()}}
 function settingsPage(){
   const replySettings=settingsTab==='cards';
   const showCards=replySettings&&replyTab==='cards';
-  let content=settingsTab==='appearance'?appearancePage():settingsTab==='behavior'?behaviorPage():showCards?cardsPage():replyTab==='emoji'?emojiPage():statusPage();
+  const replyPages={cards:cardsPage,emoji:emojiPage,status:statusPage};
+  const settingsPages={appearance:appearancePage,behavior:behaviorPage,cards:replyPages[replyTab],diary:diaryLibraryPage};
+  let content=settingsPages[settingsTab]();
   content=content.replace(/^<header[\s\S]*?<\/header>/,'');
-  const settingsTabs='<nav class="settings-tabs" aria-label="设置分类">'+[['appearance','外观'],['behavior','聊天'],['cards','自定义回复']].map(([value,label])=>'<button class="'+(settingsTab===value?'active':'')+'" onclick="setSettingsTab(\''+value+'\')">'+label+'</button>').join('')+'</nav>';
-  const replyTabs=replySettings?'<nav class="reply-tabs" aria-label="回复内容分类">'+[['cards','字卡'],['emoji','Emoji'],['status','状态']].map(([value,label])=>'<button type="button" aria-pressed="'+(replyTab===value)+'" onclick="setReplyTab(\''+value+'\')">'+label+'</button>').join('')+'</nav>':'';
+  const settingsTabs='<nav class="settings-tabs" aria-label="设置分类">'+[['appearance','外观'],['behavior','聊天'],['cards','自定义回复'],['diary','日记字卡库']].map(([value,label])=>'<button class="'+(settingsTab===value?'active':'')+'" onclick="setSettingsTab(\''+value+'\')">'+label+'</button>').join('')+'</nav>';
+  const replyTabs=replySettings?'<nav class="reply-tabs reply-content-tabs" aria-label="回复内容分类">'+[['cards','字卡'],['emoji','Emoji'],['status','状态']].map(([value,label])=>'<button type="button" aria-pressed="'+(replyTab===value)+'" onclick="setReplyTab(\''+value+'\')">'+label+'</button>').join('')+'</nav>':'';
   return header('设置','',showCards?ib('plus','onclick="addMenu()"','添加字卡'):'')+settingsTabs+replyTabs+content;
 }
-function setSettingsTab(value){if(!['appearance','behavior','cards'].includes(value))return;clearReplySelection();settingsTab=value;render();window.scrollTo?.({top:0,behavior:'instant'})}
-function home(){ensureDailyCover();return '<div class="home-top"><span class="wordmark" aria-hidden="true">'+icon('datura')+'</span>'+ib('sun','onclick="cycleTheme()"','切换主题')+'</div><section class="hero">'+coverQuote()+'<svg class="bloom" viewBox="0 0 240 290" aria-hidden="true"><defs><linearGradient id="petalVelvet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f2bdcd"/><stop offset=".48" stop-color="#ba647e"/><stop offset="1" stop-color="#681b31"/></linearGradient><radialGradient id="trumpetDepth"><stop stop-color="#240911"/><stop offset=".55" stop-color="#651c32"/><stop offset="1" stop-color="#d595ab"/></radialGradient></defs><circle class="moon-halo" cx="130" cy="115" r="83"/><path class="stem" d="M113 280c-29-54 18-98 19-143"/><path class="leaf" d="M115 234c-28-39-51-32-43-16l14 1-1 8 15 1 15 6Zm7-41c31-32 55-20 38-7l-11-2-2 8-12-1-13 2Z"/><path d="M113 148c3-39-11-53-31-67l15-1 2-20 23 13 27-25 4 24 27-3-11 24 17 20-31 2-14 39Z" fill="url(#petalVelvet)" stroke="#d09aae" stroke-width="1"/><path d="M82 81c14 8 30 3 40-8 12 3 20-1 27-25-1 26 9 31 31 21-18 14-17 31 6 44-24-10-39 0-45 41-10-35-30-62-59-73Z" fill="url(#trumpetDepth)" stroke="#e6adc1" stroke-width="1.1"/><path d="M82 81c29 9 43 23 59 73M122 73c8 27 10 47 19 81m8-106c-3 41-6 71-8 106m39-85c-24 29-33 52-39 85m45-41c-22 6-35 14-45 41" fill="none" stroke="#efb1c5" stroke-opacity=".45" stroke-width=".8"/><path class="fine-line" d="M28 212C11 178 19 151 42 143c6 31-1 53-14 69Zm0 0 14-69m-10 32 7-4m-10 18 8-4m-10 15 7-4m-3-18-9-7m7 18-8-8"/><path class="spark" d="M196 168v15m-7-7h14M45 78v10m-5-5h10M188 34v8m-4-4h8"/><circle cx="201" cy="210" r="2" fill="#b8647f"/><circle cx="52" cy="119" r="1.5" fill="#b8647f"/></svg></section><div class="home-divider"><span>夜的私藏</span><span>✧</span></div><div class="apps">'+[['chat','聊天','raven'],['days','日历','datura'],['letters','信箱','feather'],['decisions','占卜','rose'],['settings','设置','dragon'],['data','数据','reliquary']].map(([p,t,i])=>'<button class="app-icon" onclick="go(\''+p+'\')"><span class="tile">'+icon(i)+(p==='cards'?'<span class="badge">'+state.cards.length+'</span>':'')+'</span><span>'+t+'</span></button>').join('')+'</div>'}
+function setSettingsTab(value){if(!['appearance','behavior','cards','diary'].includes(value))return;clearReplySelection();settingsTab=value;render();window.scrollTo?.({top:0,behavior:'instant'})}
+function home(){ensureDailyCover();return '<div class="home-top"><span class="wordmark" aria-hidden="true">'+icon('datura')+'</span>'+ib('sun','onclick="cycleTheme()"','切换主题')+'</div><section class="hero">'+coverQuote()+'<svg class="bloom" viewBox="0 0 240 290" aria-hidden="true"><defs><linearGradient id="petalVelvet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f2bdcd"/><stop offset=".48" stop-color="#ba647e"/><stop offset="1" stop-color="#681b31"/></linearGradient><radialGradient id="trumpetDepth"><stop stop-color="#240911"/><stop offset=".55" stop-color="#651c32"/><stop offset="1" stop-color="#d595ab"/></radialGradient></defs><circle class="moon-halo" cx="130" cy="115" r="83"/><path class="stem" d="M113 280c-29-54 18-98 19-143"/><path class="leaf" d="M115 234c-28-39-51-32-43-16l14 1-1 8 15 1 15 6Zm7-41c31-32 55-20 38-7l-11-2-2 8-12-1-13 2Z"/><path d="M113 148c3-39-11-53-31-67l15-1 2-20 23 13 27-25 4 24 27-3-11 24 17 20-31 2-14 39Z" fill="url(#petalVelvet)" stroke="#d09aae" stroke-width="1"/><path d="M82 81c14 8 30 3 40-8 12 3 20-1 27-25-1 26 9 31 31 21-18 14-17 31 6 44-24-10-39 0-45 41-10-35-30-62-59-73Z" fill="url(#trumpetDepth)" stroke="#e6adc1" stroke-width="1.1"/><path d="M82 81c29 9 43 23 59 73M122 73c8 27 10 47 19 81m8-106c-3 41-6 71-8 106m39-85c-24 29-33 52-39 85m45-41c-22 6-35 14-45 41" fill="none" stroke="#efb1c5" stroke-opacity=".45" stroke-width=".8"/><path class="fine-line" d="M28 212C11 178 19 151 42 143c6 31-1 53-14 69Zm0 0 14-69m-10 32 7-4m-10 18 8-4m-10 15 7-4m-3-18-9-7m7 18-8-8"/><path class="spark" d="M196 168v15m-7-7h14M45 78v10m-5-5h10M188 34v8m-4-4h8"/><circle cx="201" cy="210" r="2" fill="#b8647f"/><circle cx="52" cy="119" r="1.5" fill="#b8647f"/></svg></section><div class="home-divider"><span>夜的私藏</span><span>✧</span></div><div class="apps">'+[['chat','聊天','raven'],['days','日历','datura'],['letters','信箱','feather'],['decisions','占卜','rose'],['diary','日记','journal'],['settings','设置','dragon'],['data','数据','reliquary']].map(([p,t,i])=>'<button class="app-icon" onclick="go(\''+p+'\')"><span class="tile">'+icon(i)+(p==='cards'?'<span class="badge">'+state.cards.length+'</span>':'')+'</span><span>'+t+'</span></button>').join('')+'</div>'}
 function cycleTheme(){let themes=['system','light','dark'];state.settings.theme=themes[(themes.indexOf(state.settings.theme)+1)%3];apply();save();toast({system:'跟随系统',light:'日间',dark:'夜间'}[state.settings.theme])}
 function modal(title,body){$('#modalBody').innerHTML='<div class="modal-top"><h2>'+title+'</h2>'+ib('close','onclick="closeModal()"','关闭')+'</div>'+body;$('#modal').showModal()}
-function closeModal(){if($('#patPanel'))commitPatPanel();$('#modal').close()}
+function closeModal(){if($('#patPanel'))commitPatPanel();if($('#diaryForm')&&diaryDraftTimer!==null)saveDiaryDraft();$('#modal').close()}
 function confirmAction(title,action){
   modal(title,'<div class="actions"><button class="secondary" onclick="closeModal()">取消</button><button class="danger" id="confirmYes">确定</button></div>');
   $('#confirmYes').onclick=async()=>{
@@ -483,9 +647,17 @@ $('#modal').addEventListener('click',e=>{if(e.target===$('#modal')){let r=$('#mo
 function avatar(p){return p?.avatar?'<img class="avatar" src="'+esc(p.avatar)+'" alt="'+esc(p.name)+'">':'<span class="avatar">'+esc((p?.name||'花').slice(0,1))+'</span>'}
 
 function normalizeProfiles(data=state){let entries=[[data.self,'在线'],...data.people.map(p=>[p,'在这里'])];for(let [person,status] of entries){if(typeof person.status!=='string')person.status=status;if(typeof person.showHeaderName!=='boolean')person.showHeaderName=true;if(typeof person.showHeaderStatus!=='boolean')person.showHeaderStatus=true;if(!Array.isArray(person.patTexts))person.patTexts=['{发起者}拍一拍{接收者}肩膀']}}
-function chatProfile(side){let p=side==='self'?state.self:state.people[0];if(!p)return '';return '<button class="chat-profile '+(side==='self'?'profile-self':'profile-other')+'" onclick="editPerson(\''+side+'\')" aria-label="'+(side==='self'?'编辑我的资料':'编辑对方资料')+'">'+avatar(p)+(p.showHeaderName?'<span class="profile-name">'+esc(p.name)+'</span>':'')+(p.showHeaderStatus&&p.status?'<span class="profile-status">'+esc(p.status)+'</span>':'')+'</button>'}
+function chatPeerHeader(){
+  const person=state.people[0];
+  const name=person.showHeaderName?'<button type="button" class="chat-peer-identity" '+
+    'onclick="editPerson(\'other\',true)" aria-label="编辑'+esc(person.name)+'的名称和头像">'+
+    '<span class="chat-peer-name">'+esc(person.name)+'</span></button>':'';
+  const status=person.showHeaderStatus?'<span class="chat-peer-status" id="peerStatus">'+
+    esc(displayedPeerStatus())+'</span>':'';
+  return '<div class="chat-peer">'+name+status+'</div>';
+}
 
-function renderChat(){let s=state.settings;$('#app').innerHTML='<header class="chat-header"><nav class="chat-toolbar" aria-label="聊天导航">'+ib('back','onclick="go(\'home\')"','返回桌面')+'<button class="chat-peer" onclick="editPerson(\'other\')" aria-label="编辑对方资料">'+(state.people[0].showHeaderName?'<span class="chat-peer-name">'+esc(state.people[0].name)+'</span>':'')+(state.people[0].showHeaderStatus?'<span class="chat-peer-status" id="peerStatus">'+esc(displayedPeerStatus())+'</span>':'')+'</button>'+ib('more','onclick="chatMenu()"','聊天操作')+'</nav></header><div class="messages" id="messages" role="log" aria-label="聊天记录" aria-live="polite"></div><div class="typing" aria-live="polite" id="typing">'+(busy&&s.showTyping?'<i>···</i> '+esc(s.typing):'')+'</div><form class="composer" onsubmit="sendMessage(event)"><div class="composer-input"><textarea id="draft" aria-label="消息" rows="1" oninput="storeChatDraft(this.value);fitChatDraft(this)">'+esc(state.chatDraft||'')+'</textarea><button class="send" type="submit" aria-label="发送">'+icon('send')+'</button></div><div class="composer-tools"><button class="sticker-button" type="button" onclick="openStickerPicker()" aria-label="表情包">'+icon('sticker')+'</button><button class="photo-button" type="button" onclick="sendPhotos()" aria-label="发送图片">'+icon('image')+'</button><button class="video-button" type="button" onclick="startCall(false)" aria-label="视频通话">'+icon('video')+'</button><button class="pat-button" type="button" onclick="openPatPanel()" aria-label="拍一拍">'+icon('pat')+'</button><button class="speak" type="button" onclick="triggerReply()" aria-label="说话">'+icon('chat')+'</button></div></form>';$('#app').style.backgroundImage=s.background?'url('+JSON.stringify(s.background)+')':'';renderMessages();fitChatDraft($('#draft'))}
+function renderChat(){let s=state.settings;$('#app').innerHTML='<header class="chat-header"><nav class="chat-toolbar" aria-label="聊天导航">'+ib('back','onclick="go(\'home\')"','返回桌面')+chatPeerHeader()+ib('more','onclick="chatMenu()"','聊天操作')+'</nav></header><div class="messages" id="messages" role="log" aria-label="聊天记录" aria-live="polite"></div><div class="typing" aria-live="polite" id="typing">'+(busy&&s.showTyping?'<i>···</i> '+esc(s.typing):'')+'</div><form class="composer" onsubmit="sendMessage(event)"><div class="composer-input"><textarea id="draft" aria-label="消息" rows="1" oninput="storeChatDraft(this.value);fitChatDraft(this)">'+esc(state.chatDraft||'')+'</textarea><button class="send" type="submit" aria-label="发送">'+icon('send')+'</button></div><div class="composer-tools"><button class="sticker-button" type="button" onclick="openStickerPicker()" aria-label="表情包">'+icon('sticker')+'</button><button class="photo-button" type="button" onclick="sendPhotos()" aria-label="发送图片">'+icon('image')+'</button><button class="video-button" type="button" onclick="startCall(false)" aria-label="视频通话">'+icon('video')+'</button><button class="pat-button" type="button" onclick="openPatPanel()" aria-label="拍一拍">'+icon('pat')+'</button><button class="speak" type="button" onclick="triggerReply()" aria-label="说话">'+icon('chat')+'</button></div></form>';$('#app').style.backgroundImage=s.background?'url('+JSON.stringify(s.background)+')':'';renderMessages();fitChatDraft($('#draft'))}
 function isStickerPlaceholder(text){
   return /^\[表情包\](?:\s|[+＋]?\d|$)/.test(text);
 }
@@ -591,9 +763,9 @@ function renderMessages({forceBottom=false,older=false}={}){
 let chatRuntimeTimer=null;
 function normalizeChatRuntime(){if(typeof state.chatDraft!=='string')state.chatDraft='';if(!Array.isArray(state.replyQueue))state.replyQueue=[];for(let m of state.messages){if(m.me&&!m.read&&!Number.isFinite(m.readAt))m.readAt=Date.now()+600}busy=state.replyQueue.some(job=>job.type!=='pat')}
 function updateTyping(){busy=state.replyQueue.some(job=>job.type!=='pat');let el=$('#typing');if(el)el.innerHTML=busy&&state.settings.showTyping?'<i>···</i> '+esc(state.settings.typing):''}
-function scheduleChatRuntime(){ensureIncomingMail();clearTimeout(chatRuntimeTimer);chatRuntimeTimer=null;let next=schedulePeerStatus();for(let m of state.messages){if(m.me&&!m.read&&Number.isFinite(m.readAt))next=Math.min(next,m.readAt)}for(let job of state.replyQueue)next=Math.min(next,job.due);for(let letter of state.letters||[])if(letter.deliveredAt===null)next=Math.min(next,letter.dueAt);if(state.settings.incomingMail&&eligibleMailCards().length&&state.settings.nextIncomingMail>0)next=Math.min(next,state.settings.nextIncomingMail);next=Math.min(next,nextMidnight());if(Number.isFinite(next))chatRuntimeTimer=setTimeout(runChatRuntime,Math.max(0,next-Date.now()))}
+function scheduleChatRuntime(){ensureIncomingMail();clearTimeout(chatRuntimeTimer);chatRuntimeTimer=null;let next=schedulePeerStatus();for(let m of state.messages){if(m.me&&!m.read&&Number.isFinite(m.readAt))next=Math.min(next,m.readAt)}for(let job of state.replyQueue)next=Math.min(next,job.due);for(let letter of state.letters||[])if(letter.deliveredAt===null)next=Math.min(next,letter.dueAt);if(state.settings.incomingMail&&eligibleMailCards().length&&state.settings.nextIncomingMail>0)next=Math.min(next,state.settings.nextIncomingMail);next=Math.min(next,nextMidnight(),state.diary.nextAt||Infinity);if(Number.isFinite(next))chatRuntimeTimer=setTimeout(runChatRuntime,Math.max(0,next-Date.now()))}
 function markMessagesRead(){let changed=false;for(let m of state.messages){if(m.me&&!m.read){m.read=true;delete m.readAt;changed=true}}if(changed){save();renderMessages()}scheduleChatRuntime()}
-function runChatRuntime(){clearTimeout(chatRuntimeTimer);chatRuntimeTimer=null;if(!state)return;let now=Date.now(),coverChanged=ensureDailyCover(),changed=deliverLetters(now)||coverChanged;for(let m of state.messages){if(m.me&&!m.read&&Number.isFinite(m.readAt)&&m.readAt<=now){m.read=true;delete m.readAt;changed=true}}let due=state.replyQueue.filter(job=>job.due<=now).sort((a,b)=>a.due-b.due);state.replyQueue=state.replyQueue.filter(job=>job.due>now);for(let job of due){if(job.type==='pat'){state.messages.push({id:job.id,text:job.text,type:'pat',me:job.pat.actor==='self',read:true,time:Date.now(),pat:job.pat});changed=true;animatePat(job.pat.target);notify(state.people[0].name,job.text);continue}let source=state.messages.find(m=>m.me&&m.id===job.replyTo);if(source){source.read=true;delete source.readAt}let p=state.people.find(p=>p.id===job.person)||state.people[0];if(!p)continue;let stickerReply=job.type==='sticker';state.messages.push({id:job.id,text:stickerReply?'':job.text,type:job.type||'text',sticker:job.sticker||null,image:job.image||null,me:false,person:p.id,name:p.name,avatar:p.avatar,time:Date.now(),quote:stickerReply?null:job.quote});changed=true;playSound();notify(p.name,stickerReply?'发送了一个表情包':job.text)}updateTyping();if(changed){save();renderMessages();if(page==='letters'||(page==='home'||page==='days')&&coverChanged)render()}scheduleChatRuntime();if(due.some(job=>job.type!=='pat')){maybeRandomPat();maybeIncomingCall()}}
+function runChatRuntime(){clearTimeout(chatRuntimeTimer);chatRuntimeTimer=null;if(!state)return;let now=Date.now(),coverChanged=ensureDailyCover(),diaryChanged=updatePeerDiary(now),changed=deliverLetters(now)||coverChanged;for(let m of state.messages){if(m.me&&!m.read&&Number.isFinite(m.readAt)&&m.readAt<=now){m.read=true;delete m.readAt;changed=true}}let due=state.replyQueue.filter(job=>job.due<=now).sort((a,b)=>a.due-b.due);state.replyQueue=state.replyQueue.filter(job=>job.due>now);for(let job of due){if(job.type==='pat'){state.messages.push({id:job.id,text:job.text,type:'pat',me:job.pat.actor==='self',read:true,time:Date.now(),pat:job.pat});changed=true;animatePat(job.pat.target);notify(state.people[0].name,job.text);continue}let source=state.messages.find(m=>m.me&&m.id===job.replyTo);if(source){source.read=true;delete source.readAt}let p=state.people.find(p=>p.id===job.person)||state.people[0];if(!p)continue;let stickerReply=job.type==='sticker';state.messages.push({id:job.id,text:stickerReply?'':job.text,type:job.type||'text',sticker:job.sticker||null,image:job.image||null,me:false,person:p.id,name:p.name,avatar:p.avatar,time:Date.now(),quote:stickerReply?null:job.quote});changed=true;playSound();notify(p.name,stickerReply?'发送了一个表情包':job.text)}updateTyping();if(changed){save();renderMessages();if(page==='letters'||(page==='home'||page==='days')&&coverChanged)render()}if(diaryChanged&&page==='diary'&&diarySide==='other')render();scheduleChatRuntime();if(due.some(job=>job.type!=='pat')){maybeRandomPat();maybeIncomingCall()}}
 function resumeChatRuntime(){normalizeChatRuntime();runChatRuntime()}
 function replyDelayRange(){let a=Number(state.settings.delayMin),b=Number(state.settings.delayMax);a=Number.isFinite(a)?Math.max(0,Math.min(3600,a)):2;b=Number.isFinite(b)?Math.max(0,Math.min(3600,b)):8;return [Math.min(a,b),Math.max(a,b)]}
 
@@ -658,10 +830,41 @@ function cardGroupField(id,label,current){
 function cardTextKey(text){
   return text.replace(/\r\n?/g,'\n').trim();
 }
-function cardsPage(){let list=state.cards.filter(c=>(filter==='全部'||c.group===filter)&&c.text.toLowerCase().includes(query.toLowerCase()));list.sort(sort==='az'?(a,b)=>a.text.localeCompare(b.text,'zh'):sort==='old'?(a,b)=>a.created-b.created:(a,b)=>b.created-a.created);return header('自定义回复','',ib('plus','onclick="addMenu()"','添加字卡'))+'<div class="search">'+icon('search')+'<input id="search" aria-label="搜索字卡" placeholder="寻找一句话" value="'+esc(query)+'"></div><div class="chips"><button class="chip '+(filter==='全部'?'active':'')+'" onclick="setFilter(\'全部\')">全部</button>'+state.groups.map(g=>'<button class="chip '+(filter===g.name?'active':'')+'" data-group="'+esc(g.name)+'">'+esc(g.name)+(g.blocked?' · 停用':'')+'</button>').join('')+'</div><div class="library-top"><span>'+list.length+' 张字卡</span><select id="sort" aria-label="字卡排序"><option value="new" '+(sort==='new'?'selected':'')+'>最新添加</option><option value="old" '+(sort==='old'?'selected':'')+'>最早添加</option><option value="az" '+(sort==='az'?'selected':'')+'>文字排序</option></select><button onclick="groupManager()">分组</button><button onclick="batch=!batch;selected.clear();render()">'+(batch?'完成':'管理')+'</button></div>'+list.map(c=>'<article class="card '+(c.blocked?'off':'')+'">'+(batch?'<input type="checkbox" class="select-card" data-id="'+c.id+'" '+(selected.has(c.id)?'checked':'')+' aria-label="选择字卡">':'')+'<div class="card-content">'+esc(c.text)+'<div class="card-tag">'+esc(c.group)+(c.blocked?' · 已屏蔽':'')+'</div></div>'+(!batch?ib('more','onclick="cardMenu(\''+c.id+'\')"','管理字卡'):'')+'</article>').join('')+(!list.length?'<div class="empty">'+icon('cards')+'<br>让心情变成第一张字卡。</div>':'')+(batch?'<div class="batchbar"><select id="moveGroup" aria-label="移动到分组">'+groupOptions()+'</select><div class="actions"><button class="secondary" onclick="selectAll()">全选</button><button class="secondary" onclick="batchDo(\'move\')">移动</button><button class="secondary" onclick="batchDo(\'block\')">屏蔽</button><button class="secondary" onclick="batchDo(\'unblock\')">启用</button><button class="danger" onclick="batchDo(\'delete\')">删除</button></div></div>':'')+'<div class="actions"><button class="secondary" onclick="reviewDuplicateCards()">'+icon('search')+' 查重</button><button class="secondary" onclick="importTxt()">'+icon('upload')+' 导入 TXT</button><button class="secondary" onclick="exportTxt()">'+icon('download')+' 导出 TXT</button></div>'}
-function bindCards(){$('#search').oninput=e=>{let pos=e.target.selectionStart;query=e.target.value;render();$('#search').focus();$('#search').setSelectionRange(pos,pos)};$('#sort').onchange=e=>{sort=e.target.value;render()};$$('[data-group]').forEach(b=>b.onclick=()=>setFilter(b.dataset.group));$$('.select-card').forEach(b=>b.onchange=()=>b.checked?selected.add(b.dataset.id):selected.delete(b.dataset.id))}
-function setFilter(g){filter=g;selected.clear();render()}
-function selectAll(){$$('.select-card').forEach(c=>{c.checked=true;selected.add(c.dataset.id)})}
+function cardsPage(){let list=filteredCards();return header('自定义回复','',ib('plus','onclick="addMenu()"','添加字卡'))+'<div class="search">'+icon('search')+'<input id="search" aria-label="搜索字卡" placeholder="寻找一句话" value="'+esc(query)+'"></div><div class="chips"><button class="chip '+(filter==='全部'?'active':'')+'" onclick="setFilter(\'全部\')">全部</button>'+state.groups.map(g=>'<button class="chip '+(filter===g.name?'active':'')+'" data-group="'+esc(g.name)+'">'+esc(g.name)+(g.blocked?' · 停用':'')+'</button>').join('')+'</div><div class="library-top"><span id="cardCount">'+list.length+' 张字卡</span><select id="sort" aria-label="字卡排序"><option value="new" '+(sort==='new'?'selected':'')+'>最新添加</option><option value="old" '+(sort==='old'?'selected':'')+'>最早添加</option><option value="az" '+(sort==='az'?'selected':'')+'>文字排序</option></select><button onclick="groupManager()">分组</button><button onclick="batch=!batch;selected.clear();render()">'+(batch?'完成':'管理')+'</button></div>'+'<div id="cardResults">'+cardResults(list)+'</div>'+(batch?'<div class="batchbar"><select id="moveGroup" aria-label="移动到分组">'+groupOptions()+'</select><div class="actions"><button class="secondary" onclick="selectAll()">全选</button><button class="secondary" onclick="batchDo(\'move\')">移动</button><button class="secondary" onclick="batchDo(\'block\')">屏蔽</button><button class="secondary" onclick="batchDo(\'unblock\')">启用</button><button class="danger" onclick="batchDo(\'delete\')">删除</button></div></div>':'')+'<div class="actions"><button class="secondary" onclick="reviewDuplicateCards()">'+icon('search')+' 查重</button><button class="secondary" onclick="importTxt()">'+icon('upload')+' 导入 TXT</button><button class="secondary" onclick="exportTxt()">'+icon('download')+' 导出 TXT</button></div>'}
+let cardLimit=80;
+function filteredCards(){
+  const needle=query.toLocaleLowerCase();
+  const list=state.cards.filter(card=>(filter==='全部'||card.group===filter)&&card.text.toLocaleLowerCase().includes(needle));
+  return list.sort(sort==='az'?(a,b)=>a.text.localeCompare(b.text,'zh'):sort==='old'?(a,b)=>a.created-b.created:(a,b)=>b.created-a.created);
+}
+function cardResults(list){
+  return list.slice(0,cardLimit).map(c=>'<article class="card '+(c.blocked?'off':'')+'">'+(batch?'<input type="checkbox" class="select-card" data-id="'+c.id+'" '+(selected.has(c.id)?'checked':'')+' aria-label="选择字卡">':'')+'<div class="card-content">'+esc(c.text)+'<div class="card-tag">'+esc(c.group)+(c.blocked?' · 已屏蔽':'')+'</div></div>'+(!batch?ib('more','onclick="cardMenu(\''+c.id+'\')"','管理字卡'):'')+'</article>').join('')+(!list.length?'<div class="empty">'+icon('cards')+'<br>让心情变成第一张字卡。</div>':'')+(list.length>cardLimit?'<button class="history-more" type="button" onclick="loadMoreCards()">显示更多字卡</button>':'');
+}
+function refreshCardResults(){
+  const list=filteredCards();
+  $('#cardCount').textContent=list.length+' 张字卡';
+  $('#cardResults').innerHTML=cardResults(list);
+  bindCardSelection();
+}
+function loadMoreCards(){cardLimit+=80;refreshCardResults()}
+function bindCardSelection(){
+  $$('.select-card').forEach(box=>box.onchange=()=>box.checked?selected.add(box.dataset.id):selected.delete(box.dataset.id));
+}
+function bindCards(){
+  const input=$('#search');
+  const update=()=>{
+    query=input.value;
+    cardLimit=80;
+    refreshCardResults();
+  };
+  input.oninput=event=>{if(!event.isComposing)update()};
+  input.addEventListener('compositionend',update);
+  $('#sort').onchange=event=>{sort=event.target.value;cardLimit=80;refreshCardResults()};
+  $$('[data-group]').forEach(button=>button.onclick=()=>setFilter(button.dataset.group));
+  bindCardSelection();
+}
+function setFilter(g){filter=g;cardLimit=80;selected.clear();render()}
+function selectAll(){filteredCards().forEach(card=>selected.add(card.id));$$('.select-card').forEach(box=>{box.checked=true});toast('已选择 '+selected.size+' 张字卡')}
 function batchDo(action){if(!selected.size)return toast('请先选择字卡');let group=$('#moveGroup').value;let run=()=>{if(action==='delete')state.cards=state.cards.filter(c=>!selected.has(c.id));else state.cards.forEach(c=>{if(selected.has(c.id)){if(action==='move')c.group=group;else c.blocked=action==='block'}});selected.clear();save();render()};if(action==='delete')confirmAction('删除所选字卡？',run);else run()}
 function addMenu(){modal('收藏一句话','<div class="actions"><button class="secondary" onclick="closeModal();editCard()">单张添加</button><button class="primary" onclick="closeModal();batchAdd()">批量添加</button></div>')}
 function editCard(id,text=''){
@@ -751,7 +954,13 @@ function reviewDuplicateCards(){
   };
 }
 function groupManager(){modal('分组','<div id="groupsList">'+state.groups.map((g,i)=>'<div class="row"><span>'+esc(g.name)+'</span><button data-g-toggle="'+i+'">'+(g.blocked?'启用':'屏蔽')+'</button>'+ib('edit','data-g-edit="'+i+'"','重命名分组')+ib('trash','data-g-delete="'+i+'"','删除分组')+'</div>').join('')+'</div><div class="actions"><input id="newGroup" placeholder="新分组名称" aria-label="新分组名称"><button class="primary" id="addGroup">添加</button></div>');$('#addGroup').onclick=()=>{let n=$('#newGroup').value.trim();if(!n)return;if(state.groups.some(g=>g.name===n))return toast('分组已存在');ensureGroup(n);save();closeModal();render();groupManager()};$$('[data-g-toggle]').forEach(b=>b.onclick=()=>{state.groups[+b.dataset.gToggle].blocked=!state.groups[+b.dataset.gToggle].blocked;save();closeModal();render();groupManager()});$$('[data-g-delete]').forEach(b=>b.onclick=()=>{let g=state.groups[+b.dataset.gDelete];confirmAction('删除「'+esc(g.name)+'」及其中的字卡？',()=>{state.cards=state.cards.filter(c=>c.group!==g.name);state.groups=state.groups.filter(x=>x!==g);filter='全部';save();render()})});$$('[data-g-edit]').forEach(b=>b.onclick=()=>{let g=state.groups[+b.dataset.gEdit],old=g.name;closeModal();modal('重命名分组','<input class="full" id="rename" value="'+esc(old)+'"><div class="actions"><button class="primary" id="renameSave">保存</button></div>');$('#renameSave').onclick=()=>{let n=$('#rename').value.trim();if(!n)return;if(state.groups.some(x=>x!==g&&x.name===n))return toast('分组已存在');g.name=n;state.cards.forEach(c=>{if(c.group===old)c.group=n});if(filter===old)filter=n;save();closeModal();render()}})}
-function download(name,content,type){let u=URL.createObjectURL(new Blob([content],{type})),a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),5000)}
+function download(name,content,type){
+  const url=URL.createObjectURL(new Blob([content],{type})),link=document.createElement('a');
+  link.href=url;link.download=name;
+  document.body.append(link);
+  link.click();link.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),30000);
+}
 function exportTxt(){let text=state.groups.map(g=>'【'+g.name+'】\n'+state.cards.filter(c=>c.group===g.name).map(c=>c.text.replace(/\r?\n/g,' ')).join('\n')).join('\n\n');download('字卡库.txt','\uFEFF'+text,'text/plain;charset=utf-8')}
 function chooseFile(accept,multiple=false){
   return new Promise(resolve=>{
@@ -776,7 +985,19 @@ function chooseFile(accept,multiple=false){
     input.click();
   });
 }
-async function importTxt(){let [f]=await chooseFile('.txt,text/plain');if(!f)return;let r=parseTxt(await f.text());await save();render();toast('添加 '+r.added+' 张，去重 '+r.duplicates+' 张')}
+async function importTxt(){
+  const owner=state;
+  const [file]=await chooseFile('.txt,text/plain');
+  if(!file||state!==owner)return;
+  try{
+    const content=await file.text();
+    if(state!==owner)return;
+    const result=parseTxt(content);
+    await save();
+    if(state===owner)render();
+    toast('添加 '+result.added+' 张，去重 '+result.duplicates+' 张');
+  }catch{toast('导入未完成，请检查文件和本地空间')}
+}
 function dataUrl(file){return new Promise((res,rej)=>{let r=new FileReader();r.onload=()=>res(r.result);r.onerror=rej;r.readAsDataURL(file)})}
 function section(t,body){return '<div class="section-label">'+t+'</div><div class="panel">'+body+'</div>'}
 function toggle(key,label){return '<label class="row"><span>'+label+'</span><input type="checkbox" class="toggle" data-setting="'+key+'" '+(state.settings[key]?'checked':'')+'></label>'}
@@ -784,19 +1005,21 @@ function num(key,label,min=0,max=9999){return '<label class="row"><span>'+label+
 function textRow(key,label){return '<label class="row"><span>'+label+'</span><input style="width:55%" type="text" data-setting="'+key+'" value="'+esc(state.settings[key])+'"></label>'}
 function pair(a,b,label){return '<div class="row"><span>'+label+'</span><div class="range-pair"><input aria-label="最短时间" type="number" min="'+(a==='activeMin'?0.01:0)+'" max="'+(a==='activeMin'?1440:3600)+'" step="0.1" data-setting="'+a+'" value="'+state.settings[a]+'"><span>—</span><input aria-label="最长时间" type="number" min="'+(a==='activeMin'?0.01:0)+'" max="'+(a==='activeMin'?1440:3600)+'" step="0.1" data-setting="'+b+'" value="'+state.settings[b]+'"></div></div>'}
 function behaviorPage(){return header('聊天设置','')+section('聊天交互',toggle('quote','引用回复')+toggle('noReply','已读不回')+num('noReplyChance','不回复概率 · %',0,100)+toggle('showRead','显示已读 / 未读')+toggle('showTyping','显示正在输入')+textRow('typing','正在输入文案')+toggle('inlineTime','显示发送时间')+toggle('showTime','点击查看完整时间'))+section('回复与主动消息',pair('delayMin','delayMax','回复速度 · 秒')+toggle('active','主动发送消息')+pair('activeMin','activeMax','主动消息 · 分钟')+toggle('join','连句')+toggle('stickerWithText','我的表情包可附带文字')+toggle('notify','系统通知'))+section('表情与拍一拍','<div class="row"><span>我的表情包</span><button onclick="openStickerPicker(\'self\',true)" aria-label="管理我的表情包">管理</button></div><div class="row"><span>对方的表情包</span><button onclick="openStickerPicker(\'other\',true)" aria-label="管理对方的表情包">管理</button></div><div class="row"><span>双方拍一拍</span><button onclick="openPatPanel()">管理</button></div>')+section('模拟视频',toggle('videoIncoming','对方随机发起')+'<div class="row"><span>视频背景图片</span><button onclick="uploadVideoBackground()">上传</button>'+(state.settings.videoBackground?'<button onclick="clearVideoBackground()">清除</button>':'')+'</div>')+section('消息音效',toggle('sound','发送音效')+toggle('randomSound','音效随机播放')+'<div class="row"><span>音效列表</span><button onclick="uploadSounds()">'+icon('plus')+'</button></div>'+state.sounds.map((s,i)=>'<div class="row sound-item"><span>'+esc(s.name)+'</span>'+ib('sound','onclick="playSound('+i+')"','试听')+ib('trash','onclick="removeSound('+i+')"','删除')+'</div>').join(''))}
-function bindSettings(){$$('[data-setting]').forEach(el=>el.onchange=async()=>{let k=el.dataset.setting,v=el.type==='checkbox'?el.checked:el.type==='number'||el.type==='range'?Number(el.value):el.value;if(el.type==='number'){if(!Number.isFinite(v))v=0;v=Math.max(Number(el.min||0),Math.min(Number(el.max||9999),v));el.value=v}if(k==='notify'&&v){if(!('Notification'in window)){el.checked=false;return toast('当前浏览器不支持系统通知')}let p=await Notification.requestPermission();if(p!=='granted'){el.checked=false;return toast('通知权限尚未开启')}}state.settings[k]=v;if(k==='delayMin'||k==='delayMax'){if(state.settings.delayMax<state.settings.delayMin)state.settings[k==='delayMin'?'delayMax':'delayMin']=v}if(k==='activeMin'||k==='activeMax'){if(state.settings.activeMax<state.settings.activeMin)state.settings[k==='activeMin'?'activeMax':'activeMin']=v}if(['active','activeMin','activeMax'].includes(k))scheduleActive(true);if(k==='statusReplies')scheduleChatRuntime();apply();save();if(['delayMin','delayMax','activeMin','activeMax','fontSize','palette','theme'].includes(k))render()})}
+function bindSettings(){$$('[data-setting]').forEach(el=>el.onchange=async()=>{let k=el.dataset.setting,v=el.type==='checkbox'?el.checked:el.type==='number'||el.type==='range'?Number(el.value):el.value;if(el.type==='number'){if(!Number.isFinite(v))v=0;v=Math.max(Number(el.min||0),Math.min(Number(el.max||9999),v));el.value=v}if(k==='notify'&&v){if(!('Notification'in window)){el.checked=false;return toast('当前浏览器不支持系统通知')}let p=await Notification.requestPermission();if(p!=='granted'){el.checked=false;return toast('通知权限尚未开启')}}state.settings[k]=v;if(k==='delayMin'||k==='delayMax'){if(state.settings.delayMax<state.settings.delayMin)state.settings[k==='delayMin'?'delayMax':'delayMin']=v}if(k==='activeMin'||k==='activeMax'){if(state.settings.activeMax<state.settings.activeMin)state.settings[k==='activeMin'?'activeMax':'activeMin']=v}if(['active','activeMin','activeMax'].includes(k))scheduleActive(true);if(k==='statusReplies')scheduleChatRuntime();if(k==='peerDiaryEnabled')runChatRuntime();apply();save();if(['delayMin','delayMax','activeMin','activeMax','fontSize','palette','theme'].includes(k))render()})}
 async function uploadSounds(){let files=await chooseFile('audio/*',true);try{for(let f of files)state.sounds.push({id:uid(),name:f.name,data:await dataUrl(f)});await save();render()}catch{toast('音效保存失败')}}
 function removeSound(i){state.sounds.splice(i,1);save();render()}
 
 function peoplePage(){return header('角色','')+'<div class="section-label">我</div>'+personPanel(state.self,'self')+'<div class="section-label">对方</div>'+personPanel(state.people[0],'other')}
 function personPanel(p,id){return '<div class="panel"><div class="row"><div class="person">'+avatar(p)+'<div><strong>'+esc(p.name)+'</strong>'+(p.status?'<div class="person-status">'+esc(p.status)+'</div>':'')+'</div></div>'+ib('edit','onclick="editPerson(\''+id+'\')"','编辑'+(id==='self'?'我的':'对方')+'资料')+'</div></div>'}
-function editPerson(id){
+function editPerson(id,identityOnly=false){
   const owner=state,person=id==='self'?state.self:state.people[0];
   let image=person.avatar;
   modal(id==='self'?'我的资料':'对方资料',
     '<div class="portrait"><div id="portrait">'+avatar(person)+'</div><button class="secondary" id="uploadAvatar">上传头像</button><button id="clearAvatar">移除</button></div>'+
-    '<div class="field"><div class="field-heading"><label for="personName">名称</label><label class="field-switch"><span>显示名称</span><input type="checkbox" class="toggle" id="personShowName" '+(person.showHeaderName?'checked':'')+'></label></div><input class="full" id="personName" maxlength="40" value="'+esc(person.name)+'"></div>'+
-    '<div class="field"><div class="field-heading"><label for="personStatus">状态</label><label class="field-switch"><span>显示状态</span><input type="checkbox" class="toggle" id="personShowStatus" '+(person.showHeaderStatus?'checked':'')+'></label></div><textarea id="personStatus" rows="2" maxlength="160" placeholder="写下此刻的状态…">'+esc(person.status)+'</textarea></div>'+
+    '<div class="field"><div class="field-heading"><label for="personName">名称</label>'+
+    (identityOnly?'':'<label class="field-switch"><span>显示名称</span><input type="checkbox" class="toggle" id="personShowName" '+(person.showHeaderName?'checked':'')+'></label>')+
+    '</div><input class="full" id="personName" maxlength="40" value="'+esc(person.name)+'"></div>'+
+    (identityOnly?'':'<div class="field"><div class="field-heading"><label for="personStatus">状态</label><label class="field-switch"><span>显示状态</span><input type="checkbox" class="toggle" id="personShowStatus" '+(person.showHeaderStatus?'checked':'')+'></label></div><textarea id="personStatus" rows="2" maxlength="160" placeholder="写下此刻的状态…">'+esc(person.status)+'</textarea></div>')+
     '<button class="primary full" id="savePerson">保存</button>');
   const portrait=$('#portrait');
   $('#uploadAvatar').onclick=async()=>{
@@ -822,9 +1045,11 @@ function editPerson(id){
     captureChatDraft();
     const oldStatus=person.status;
     person.name=name;
-    person.status=$('#personStatus').value.trim();
-    person.showHeaderName=$('#personShowName').checked;
-    person.showHeaderStatus=$('#personShowStatus').checked;
+    if(!identityOnly){
+      person.status=$('#personStatus').value.trim();
+      person.showHeaderName=$('#personShowName').checked;
+      person.showHeaderStatus=$('#personShowStatus').checked;
+    }
     person.avatar=image;
     if(id!=='self'){
       if(person.status!==oldStatus){
@@ -844,7 +1069,14 @@ function fontEditor(){modal('自定义字体','<label class="field"><span>字体
 function bubbleEditor(){modal('气泡样式','<textarea id="bubbleCSS" rows="8" placeholder=".bubble { border-radius: 22px; }&#10;.me .bubble { background: #f9dfc7; }">'+esc(state.settings.bubbleCSS)+'</textarea><label class="field"><span>气泡背景图片 URL</span><input id="bubbleURL" placeholder="https://…"></label><div class="actions"><button class="secondary" id="bubbleReset">恢复</button><button class="primary" id="bubbleSave">应用</button></div>');$('#bubbleSave').onclick=()=>{let v=$('#bubbleCSS').value,u=$('#bubbleURL').value.trim();if(u){if(!/^https?:\/\//i.test(u))return toast('请输入有效的 HTTP 图片地址');v+='\n.bubble{background-image:url('+JSON.stringify(u)+');background-size:cover}'}state.settings.bubbleCSS=v;apply();save();closeModal()};$('#bubbleReset').onclick=()=>{state.settings.bubbleCSS='';apply();save();closeModal()}}
 function replayIntro(){let old=$('#intro');if(old)old.remove();let div=document.createElement('div');div.id='intro';div.innerHTML="<div class=\"intro-flower\"><svg class=\"bloom\" viewBox=\"0 0 240 290\" aria-hidden=\"true\"><defs><linearGradient id=\"petalVelvet\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#f2bdcd\"/><stop offset=\".48\" stop-color=\"#ba647e\"/><stop offset=\"1\" stop-color=\"#681b31\"/></linearGradient><radialGradient id=\"trumpetDepth\"><stop stop-color=\"#240911\"/><stop offset=\".55\" stop-color=\"#651c32\"/><stop offset=\"1\" stop-color=\"#d595ab\"/></radialGradient></defs><circle class=\"moon-halo\" cx=\"130\" cy=\"115\" r=\"83\"/><path class=\"stem\" d=\"M113 280c-29-54 18-98 19-143\"/><path class=\"leaf\" d=\"M115 234c-28-39-51-32-43-16l14 1-1 8 15 1 15 6Zm7-41c31-32 55-20 38-7l-11-2-2 8-12-1-13 2Z\"/><path d=\"M113 148c3-39-11-53-31-67l15-1 2-20 23 13 27-25 4 24 27-3-11 24 17 20-31 2-14 39Z\" fill=\"url(#petalVelvet)\" stroke=\"#d09aae\" stroke-width=\"1\"/><path d=\"M82 81c14 8 30 3 40-8 12 3 20-1 27-25-1 26 9 31 31 21-18 14-17 31 6 44-24-10-39 0-45 41-10-35-30-62-59-73Z\" fill=\"url(#trumpetDepth)\" stroke=\"#e6adc1\" stroke-width=\"1.1\"/><path d=\"M82 81c29 9 43 23 59 73M122 73c8 27 10 47 19 81m8-106c-3 41-6 71-8 106m39-85c-24 29-33 52-39 85m45-41c-22 6-35 14-45 41\" fill=\"none\" stroke=\"#efb1c5\" stroke-opacity=\".45\" stroke-width=\".8\"/><path class=\"fine-line\" d=\"M28 212C11 178 19 151 42 143c6 31-1 53-14 69Zm0 0 14-69m-10 32 7-4m-10 18 8-4m-10 15 7-4m-3-18-9-7m7 18-8-8\"/><path class=\"spark\" d=\"M196 168v15m-7-7h14M45 78v10m-5-5h10M188 34v8m-4-4h8\"/><circle cx=\"201\" cy=\"210\" r=\"2\" fill=\"#b8647f\"/><circle cx=\"52\" cy=\"119\" r=\"1.5\" fill=\"#b8647f\"/></svg></div><h1>此 刻</h1><p>夜色里，私藏你的回声。</p>";document.body.append(div);setTimeout(()=>div.remove(),3000)}
 function dataPage(){return header('数据','')+'<div class="storage-art">'+icon('reliquary')+'</div><div class="stats"><div><strong>'+state.cards.length+'</strong>字卡</div><div><strong>'+state.messages.length+'</strong>消息</div><div><strong>'+state.calls.length+'</strong>通话</div></div><div class="actions"><button class="primary" onclick="exportAll()">'+icon('download')+' 全量导出</button><button class="secondary" onclick="importAll()">'+icon('upload')+' 全量导入</button></div><div class="actions"><button class="secondary" onclick="exportTxt()">导出字卡 TXT</button><button class="secondary" onclick="importTxt()">导入字卡 TXT</button></div><div class="section-label">本地空间</div><div class="panel"><div class="row"><span>空间使用</span><span id="storageSize" style="text-align:right">读取中</span></div><div class="row"><span>持久存储</span><button onclick="requestPersist()" id="persistStatus">申请保留</button></div></div><div class="actions"><button class="secondary full" onclick="callHistory()">通话记录</button></div><div class="section-label">聊天记录</div><button class="danger full" onclick="clearMessages()">删除全部聊天记录</button><div class="section-label">重新开始</div><button class="danger full" onclick="resetAll()">重置所有数据</button>'}
-async function exportAll(){await save();download('完整备份-'+new Date().toISOString().slice(0,10)+'.json',JSON.stringify({app:'private-local-desktop',version:1,exportedAt:new Date().toISOString(),data:state},null,2),'application/json');toast('全量备份已导出')}
+async function exportAll(){
+  captureChatDraft();
+  try{
+    const content=JSON.stringify({app:'private-local-desktop',version:1,exportedAt:new Date().toISOString(),data:state});
+    download('完整备份-'+todayText()+'.json',content,'application/json');
+    toast('全量备份已导出');
+  }catch{toast('备份未能导出，请重试')}
+}
 function validateBackup(d){normalizeFeatureData(d,true);if(Array.isArray(d.messages)&&!d.messages.every(validStickerMessage))throw Error('表情包消息格式无效');if(Array.isArray(d.replyQueue)&&!d.replyQueue.every(validStickerMessage))throw Error('待发送表情包格式无效');if(d&&d.replyQueue===undefined)d.replyQueue=[];if(!d||!Array.isArray(d.replyQueue)||!d.replyQueue.every(j=>j&&typeof j.id==='string'&&typeof j.text==='string'&&typeof j.person==='string'&&Number.isFinite(j.due)&&(j.replyTo===undefined||j.replyTo===null||typeof j.replyTo==='string')&&(j.quote===null||typeof j.quote==='string')))throw Error('待发送消息格式无效');if(!d||d.schema!==1||!Array.isArray(d.cards)||!Array.isArray(d.groups)||!Array.isArray(d.messages)||!Array.isArray(d.people)||!Array.isArray(d.sounds)||!Array.isArray(d.calls)||!d.self||!d.settings)throw Error('备份格式不完整');let str=(v)=>typeof v==='string';if(!d.calls.every(c=>typeof c.id==='string'&&['incoming','outgoing'].includes(c.direction)&&['ended','rejected','cancelled','missed'].includes(c.status)&&Number.isFinite(c.time)&&Number.isFinite(c.duration)&&c.duration>=0))throw Error('通话记录格式无效');if(!d.cards.every(c=>str(c.id)&&str(c.text)&&str(c.group)&&typeof c.blocked==='boolean'&&Number.isFinite(c.created))||!d.groups.every(g=>str(g.name)&&typeof g.blocked==='boolean')||!d.messages.every(m=>str(m.id)&&str(m.text)&&typeof m.me==='boolean'&&Number.isFinite(m.time))||!d.people.length||!d.people.every(p=>str(p.id)&&str(p.name)&&str(p.avatar))||!str(d.self.name)||!str(d.self.avatar)||!d.sounds.every(s=>str(s.name)&&str(s.data)))throw Error('备份包含无效记录');for(let p of [d.self,...d.people]){if(p.patTexts!==undefined&&(!Array.isArray(p.patTexts)||!p.patTexts.every(t=>typeof t==='string')))throw Error('拍一拍文案格式无效');if((p.status!==undefined&&typeof p.status!=='string')||(p.showHeaderName!==undefined&&typeof p.showHeaderName!=='boolean')||(p.showHeaderStatus!==undefined&&typeof p.showHeaderStatus!=='boolean'))throw Error('角色状态或显示设置无效')}normalizeProfiles(d);if(d.settings.readStatusVersion!==2){d.settings.showRead=true;d.settings.readStatusVersion=2}let defs=initial().settings,s={...defs};for(let k of Object.keys(defs)){let val=d.settings[k];if(typeof val===typeof defs[k])s[k]=val}if(!['system','light','dark'].includes(s.theme))s.theme='system';s.fontSize=Math.max(12,Math.min(24,s.fontSize));for(let k of ['delayMin','delayMax'])s[k]=Math.max(0,Math.min(3600,s[k]));for(let k of ['activeMin','activeMax'])s[k]=Math.max(.01,Math.min(1440,s[k]));s.delayMax=Math.max(s.delayMin,s.delayMax);s.activeMax=Math.max(s.activeMin,s.activeMax);s.noReplyChance=Math.max(0,Math.min(100,s.noReplyChance));s.stickerChance=Math.max(0,Math.min(100,s.stickerChance));s.patChance=Math.max(0,Math.min(100,s.patChance));s.nextActive=0;s.peerStatusText=d.settings.peerStatusText;d.settings=s;let ids=new Set(),texts=new Set();d.cards=d.cards.filter(c=>{if(ids.has(c.id)||texts.has(cardTextKey(c.text)))return false;ids.add(c.id);texts.add(cardTextKey(c.text));return true});d.groups=d.groups.filter((g,i,a)=>a.findIndex(x=>x.name===g.name)===i);d.cards.forEach(c=>{if(!d.groups.some(g=>g.name===c.group))d.groups.push({name:c.group,blocked:false})});return d}
 async function replaceAllData(nextState){
   const previous=state,previousQueue=state.replyQueue;
@@ -854,17 +1086,21 @@ async function replaceAllData(nextState){
   cancelReplies();
   clearTimeout(draftSaveTimer);
   draftSaveTimer=null;
+  clearTimeout(diaryDraftTimer);
+  diaryDraftTimer=null;
   clearReplySelection();
   messageView=null;
   state=nextState;
   normalizeChatRuntime();
   cacheChatDraft(state.chatDraft);
+  cacheDiaryDraft();
   try{
     await save();
   }catch{
     state=previous;
     state.replyQueue=previousQueue;
     cacheChatDraft(state.chatDraft);
+    cacheDiaryDraft();
     toast('数据未能写入，已保留原有内容');
     return false;
   }finally{
@@ -924,8 +1160,30 @@ let currentCall=null,answerTimer=null,callTick=null,callMinimized=false,callMini
 paths.minimize='M4 12h16';paths.maximize='M3 9V3h6 M15 3h6v6 M21 15v6h-6 M9 21H3v-6';paths.image='M3 3h18v18H3Z M3 16l6-6 5 5 3-3 4 4 M16 7h.01';
 function normalizeVideoSettings(){delete state.settings.videoMin;delete state.settings.videoMax;delete state.settings.nextVideo;if(typeof state.settings.videoBackground!=='string')state.settings.videoBackground=''}
 function maybeIncomingCall(){if(!state?.settings.videoIncoming||page!=='chat'||document.hidden||currentCall||busy||$('#modal')?.open)return;if(Math.random()<.12)startCall(true)}
-async function uploadVideoBackground(){let [file]=await chooseFile('image/*');if(!file)return;if(file.type&&!file.type.startsWith('image/'))return toast('请选择图片文件');try{let image=await dataUrl(file);if(!/^data:image\//i.test(image))return toast('不支持此图片格式');state.settings.videoBackground=image;await save();if(currentCall){renderCall();updateCallTime()}else if(page==='behavior')render();toast('视频画面已更新')}catch{toast('图片保存失败，请检查本地空间')}}
-function clearVideoBackground(){state.settings.videoBackground='';save();if(currentCall){renderCall();updateCallTime()}else if(page==='behavior')render()}
+async function uploadVideoBackground(){
+  const owner=state;
+  const [file]=await chooseFile('image/*');
+  if(!file||state!==owner)return;
+  if(file.type&&!file.type.startsWith('image/'))return toast('请选择图片文件');
+  let previous,image;
+  try{
+    image=await dataUrl(file);
+    if(state!==owner)return;
+    if(!/^data:image\//i.test(image))return toast('不支持此图片格式');
+    previous=owner.settings.videoBackground;
+    owner.settings.videoBackground=image;
+    await save();
+  }catch{
+    if(state===owner&&image&&owner.settings.videoBackground===image)owner.settings.videoBackground=previous;
+    toast('图片未能保存，请检查本地空间');
+    return;
+  }
+  if(state!==owner)return;
+  if(currentCall){renderCall();updateCallTime()}
+  else if(page==='settings'&&settingsTab==='behavior')render();
+  toast('视频画面已更新');
+}
+function clearVideoBackground(){state.settings.videoBackground='';save();if(currentCall){renderCall();updateCallTime()}else if(page==='settings'&&settingsTab==='behavior')render()}
 function startCall(incoming=false){if(currentCall)return toast('正在通话中');let p=state.people[0];if(!p)return;if($('#modal').open)closeModal();currentCall={id:uid(),direction:incoming?'incoming':'outgoing',time:Date.now(),connected:0,name:p.name,avatar:p.avatar};renderCall();playSound();if(incoming){notify(p.name,'视频来电')}else{answerTimer=setTimeout(()=>{if(!currentCall)return;if(Math.random()<.8)acceptCall();else{toast(callMessageText('rejected',0,currentCall));finishCall('rejected')}},rand(1000,3500))}}
 function renderCall(){let old=$('#callScreen');if(old)old.remove();if(!currentCall)return;let c=currentCall,connected=!!c.connected,p=state.people[0],image=state.settings.videoBackground;let overlay=document.createElement('section');overlay.id='callScreen';overlay.className='call-screen '+(connected?'connected':'ringing')+(image?' has-video-image':'')+(connected&&callMinimized?' minimized':'');overlay.setAttribute('role','dialog');overlay.setAttribute('aria-modal','true');overlay.setAttribute('aria-label',callMinimized?'视频通话小窗':'视频通话');if(callMinimized){overlay.setAttribute('role','region');overlay.removeAttribute('aria-modal')}overlay.innerHTML='<div class="call-wallpaper"></div><div class="call-stars"></div><div class="call-heading">'+icon('video')+'<span>视频通话</span>'+(connected?'<button class="call-minimize" onclick="minimizeCall()" aria-label="缩小通话">'+icon('minimize')+'</button>':'')+'<button class="call-picture" onclick="uploadVideoBackground()" aria-label="上传视频背景">'+icon('image')+'</button></div><div class="call-person">'+avatar({name:c.name,avatar:c.avatar})+'<h2>'+esc(c.name)+'</h2><p id="callStatus">'+(connected?formatDuration(Math.floor((Date.now()-c.connected)/1000)):c.direction==='incoming'?'邀请你视频通话':'等待对方接听')+'</p></div>'+(connected?'<div class="self-preview">'+avatar(state.self)+'</div><div class="call-art">'+icon('dragon')+'</div>':'<div class="call-orbit"></div>')+'<div class="call-controls">'+(!connected&&c.direction==='incoming'?'<button class="call-decline" onclick="finishCall(\'rejected\')">'+icon('hangup')+'<span>拒绝</span></button><button class="call-accept" onclick="acceptCall()">'+icon('video')+'<span>同意</span></button>':'<button class="call-decline" onclick="finishCall(\''+(connected?'ended':'cancelled')+'\')">'+icon('hangup')+'<span>'+(connected?'挂断':'取消')+'</span></button>')+'</div>'+(connected?'<div class="call-mini-actions"><button aria-label="放大通话" onclick="maximizeCall()">'+icon('maximize')+'</button><button aria-label="挂断通话" onclick="finishCall(\'ended\')">'+icon('hangup')+'</button></div>':'');document.body.append(overlay);let backdrop=image||c.avatar||state.settings.background;if(backdrop)overlay.querySelector('.call-wallpaper').style.backgroundImage='url('+JSON.stringify(backdrop)+')';if(callMinimized)attachMiniDrag(overlay);let buttons=overlay.querySelectorAll('button');overlay.querySelector('.call-controls button')?.focus();overlay.addEventListener('keydown',e=>{if(callMinimized)return;if(e.key==='Escape'){e.preventDefault();if(currentCall)finishCall(currentCall.connected?'ended':c.direction==='incoming'?'rejected':'cancelled')}if(e.key==='Tab'){e.preventDefault();let i=[...buttons].indexOf(document.activeElement);buttons[(i+(e.shiftKey?-1:1)+buttons.length)%buttons.length].focus()}})}
 
@@ -1084,7 +1342,7 @@ function openPatPanel(side='self'){if($('#modal').open)closeModal();patPanelSide
 function renderPatPanelRows(){let person=patPanelSide==='self'?state.self:state.people[0],list=$('#patPanelList');if(!list)return;list.innerHTML=person.patTexts.length?person.patTexts.map((text,i)=>'<div class="pat-panel-row"><textarea class="pat-content-input" data-content-index="'+i+'" aria-label="'+(patPanelSide==='self'?'我的':'对方')+'拍一拍内容 '+(i+1)+'" rows="2" maxlength="160" placeholder="写下完整互动内容…">'+esc(text)+'</textarea><div class="pat-row-actions">'+(patPanelSide==='self'?'<button class="pat-send" data-send-pat="'+i+'">发送</button>':'')+ib('trash','data-delete-pat="'+i+'"','删除此内容')+'</div></div>').join(''):'<div class="empty pat-panel-empty">'+(patPanelSide==='self'?'添加自己的拍一拍内容':'添加对方的拍一拍内容')+'</div>';list.querySelectorAll('[data-content-index]').forEach(input=>{input.oninput=()=>person.patTexts[+input.dataset.contentIndex]=input.value;input.onchange=()=>save()});list.querySelectorAll('[data-delete-pat]').forEach(button=>button.onclick=()=>{person.patTexts.splice(+button.dataset.deletePat,1);save();renderPatPanelRows()});list.querySelectorAll('[data-send-pat]').forEach(button=>button.onclick=()=>sendPatContent(+button.dataset.sendPat))}
 function addPatContent(){let person=patPanelSide==='self'?state.self:state.people[0];person.patTexts.push('');save();renderPatPanelRows();$('#patPanelList').querySelectorAll('[data-content-index]').item(person.patTexts.length-1)?.focus()}
 function sendPatContent(index){let text=state.self.patTexts[index]?.trim();if(!text)return toast('请先填写自己的拍一拍内容');commitPatPanel();closeModal();performPat('self','other',text)}
-$('#modal').addEventListener('cancel',()=>{if($('#patPanel'))commitPatPanel()});
+$('#modal').addEventListener('cancel',()=>{if($('#patPanel'))commitPatPanel();if($('#diaryForm')&&diaryDraftTimer!==null)saveDiaryDraft()});
 
 
 const palettes={wine:{dark:['#120e13','#20171f','#f0dce5','#b398a8','#783b53','#ec8dae','#3f2937'],light:['#f6e9ee','#fff7fa','#29151e','#856775','#e9bacb','#9a2c4c','#dfc8d2']},rose:{dark:['#25131d','#331e2a','#ffe8f0','#c5a4b5','#94516c','#f5a8c6','#593447'],light:['#fff0f5','#fffafd','#431b2d','#9b7184','#f0bdd1','#b34570','#efd3df']},ink:{dark:['#111214','#202125','#f3f0f2','#a9a9b1','#52545c','#d3c9d1','#383940'],light:['#f3f2f4','#ffffff','#222226','#7d7c85','#e0dbe1','#59545d','#d5d2d8']},plum:{dark:['#17111f','#261b31','#f1e2f8','#b49bc6','#674674','#e2a3cd','#43304f'],light:['#f4eaf8','#fffaff','#392343','#94749f','#dfc0e8','#9f477d','#e3cee9']}};
@@ -1111,7 +1369,7 @@ async function uploadSurface(key){
 }
 function clearSurface(key){state.settings[key]='';save();render()}
 function validDay(date){if(typeof date!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(date))return false;let [y,m,d]=date.split('-').map(Number),v=new Date(y,m-1,d);return v.getFullYear()===y&&v.getMonth()===m-1&&v.getDate()===d}
-function normalizeFeatureData(data,strict=false){normalizeExtendedData(data);if(typeof data.chatDraft!=='string')data.chatDraft='';if(!data||typeof data!=='object')throw Error('备份格式无效');for(let key of ['importantDays','decisions','letters'])if(data[key]===undefined)data[key]=[];let id=x=>typeof x==='string'&&/^[\w-]+$/.test(x),str=x=>typeof x==='string';if(!Array.isArray(data.importantDays)||!data.importantDays.every(d=>d&&id(d.id)&&str(d.title)&&validDay(d.date)&&typeof d.annual==='boolean'&&str(d.note)))throw Error('重要日数据无效');if(!Array.isArray(data.decisions)||!data.decisions.every(d=>d&&id(d.id)&&['coin','draw'].includes(d.kind)&&Array.isArray(d.options)&&d.options.length&&d.options.every(str)&&str(d.result)&&d.options.includes(d.result)&&Number.isFinite(d.time)))throw Error('抉择记录无效');if(!Array.isArray(data.letters)||!data.letters.every(l=>l&&id(l.id)&&str(l.text)&&str(l.replyText)&&l.replyText.trim()&&Number.isFinite(l.sentAt)&&Number.isFinite(l.dueAt)&&l.dueAt>=l.sentAt+8*3600000&&l.dueAt<=l.sentAt+24*3600000&&(l.deliveredAt===null||Number.isFinite(l.deliveredAt)&&l.deliveredAt>=l.dueAt)))throw Error('信封数据无效');normalizeDailyRecords(data);normalizeMailNames(data);normalizeStatusTexts(data);normalizeStickerLibraries(data,strict);if(data.settings&&!Object.hasOwn(palettes,data.settings.palette))data.settings.palette='wine'}
+function normalizeFeatureData(data,strict=false){normalizeExtendedData(data);if(typeof data.chatDraft!=='string')data.chatDraft='';if(!data||typeof data!=='object')throw Error('备份格式无效');for(let key of ['importantDays','decisions','letters'])if(data[key]===undefined)data[key]=[];let id=x=>typeof x==='string'&&/^[\w-]+$/.test(x),str=x=>typeof x==='string';if(!Array.isArray(data.importantDays)||!data.importantDays.every(d=>d&&id(d.id)&&str(d.title)&&validDay(d.date)&&typeof d.annual==='boolean'&&str(d.note)))throw Error('重要日数据无效');if(!Array.isArray(data.decisions)||!data.decisions.every(d=>d&&id(d.id)&&['coin','draw'].includes(d.kind)&&Array.isArray(d.options)&&d.options.length&&d.options.every(str)&&str(d.result)&&d.options.includes(d.result)&&Number.isFinite(d.time)))throw Error('抉择记录无效');if(!Array.isArray(data.letters)||!data.letters.every(l=>l&&id(l.id)&&str(l.text)&&str(l.replyText)&&l.replyText.trim()&&Number.isFinite(l.sentAt)&&Number.isFinite(l.dueAt)&&l.dueAt>=l.sentAt+8*3600000&&l.dueAt<=l.sentAt+24*3600000&&(l.deliveredAt===null||Number.isFinite(l.deliveredAt)&&l.deliveredAt>=l.dueAt)))throw Error('信封数据无效');normalizeDailyRecords(data);normalizeMailNames(data);normalizeStatusTexts(data);normalizeStickerLibraries(data,strict);normalizeDiaryData(data);if(data.settings&&!Object.hasOwn(palettes,data.settings.palette))data.settings.palette='wine'}
 
 let coinAnimating=false,coinAnimationTimer=null,decisionSaveTimer=null,divinationTab='coin';
 function setDivinationTab(value){if(!['coin','draw','tarot'].includes(value))return;save();divinationTab=value;tarotShowingResult=false;render()}
@@ -1272,6 +1530,171 @@ function normalizeMailNames(data){
   }
 }
 
+
+function normalizeDiaryData(data){
+  if(data.diary===undefined)data.diary={self:[],other:[],nextAt:0};
+  const diary=data.diary;
+  const validEntry=entry=>entry&&typeof entry.id==='string'&&/^[\w-]+$/.test(entry.id)&&
+    typeof entry.title==='string'&&typeof entry.text==='string'&&entry.text.trim()&&
+    typeof entry.time==='number'&&Number.isFinite(new Date(entry.time).getTime());
+  if(!diary||![diary.self,diary.other].every(entries=>Array.isArray(entries)&&entries.every(validEntry))||
+    !Number.isFinite(new Date(diary.nextAt).getTime())||typeof diary.nextAt!=='number'||diary.nextAt<0)throw Error('日记数据无效');
+  if(typeof diary.draft?.title!=='string'||typeof diary.draft?.text!=='string')diary.draft={title:'',text:''};
+  if(data.diaryCards===undefined){
+    data.diaryCards=[];
+    diary.nextAt=0;
+  }
+  if(!Array.isArray(data.diaryCards)||!data.diaryCards.every(text=>
+    typeof text==='string'&&text.trim()&&text.trim().length<=DIARY_CARD_MAX_LENGTH&&!/[\r\n]/.test(text.trim())
+  ))throw Error('日记字卡格式无效');
+  data.diaryCards=[...new Set(data.diaryCards.map(text=>text.trim()))];
+  const groups=data.diaryGroups??[], assignments=data.diaryCardGroups??{};
+  if(!Array.isArray(groups)||!groups.every(name=>typeof name==='string'&&name.trim()&&
+    name.trim().length<=DIARY_GROUP_MAX_LENGTH&&!/[\r\n]/.test(name))||
+    typeof assignments!=='object'||Array.isArray(assignments))throw Error('日记字卡分组格式无效');
+  const names=new Set(groups.map(name=>name.trim()));
+  names.delete(DIARY_UNGROUPED);
+  data.diaryGroups=[...names];
+  const cardTexts=new Set(data.diaryCards);
+  data.diaryCardGroups=Object.create(null);
+  for(const [text,group] of Object.entries(assignments)){
+    if(cardTexts.has(text)&&names.has(group))data.diaryCardGroups[text]=group;
+  }
+}
+
+const diaryHour=3600000;
+function nextDiaryTime(now){
+  return now+Math.floor(rand(4*diaryHour,24*diaryHour));
+}
+function updatePeerDiary(now){
+  const {diary,diaryCards:cards}=state;
+  if(!state.settings.peerDiaryEnabled||!cards.length){
+    if(diary.nextAt){
+      diary.nextAt=0;
+      save();
+    }
+    return false;
+  }
+  if(!diary.nextAt||diary.nextAt>now+24*diaryHour){
+    diary.nextAt=nextDiaryTime(now);
+    save();
+    return false;
+  }
+  if(diary.nextAt>now)return false;
+  const count=Math.floor(rand(1,Math.min(20,cards.length)+1));
+  const text=punctuatedParagraph(sampleItems(cards,count),['。','！','……'],['，','；','。','……']);
+  diary.other.push({id:uid(),title:'',text,time:diary.nextAt});
+  diary.nextAt=nextDiaryTime(now);
+  save();
+  return true;
+}
+
+function diaryTime(time){
+  const date=new Date(time);
+  const day=date.toLocaleDateString('zh-CN',{year:'numeric',month:'2-digit',day:'2-digit'});
+  const clock=date.toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit',hourCycle:'h23'});
+  return '<time datetime="'+date.toISOString()+'"><span>'+day+'</span> <span>'+clock+'</span></time>';
+}
+let diarySide='self';
+const diaryLimits={self:40,other:40};
+function loadMoreDiary(){diaryLimits[diarySide]+=40;render()}
+function diaryOwnerTitle(side){
+  return (side==='self'?state.self.name:state.people[0].name)+'的日记';
+}
+function selectDiarySide(side){
+  if(side===diarySide)return;
+  diarySide=side;
+  render();
+  $('#diaryTab-'+side).focus();
+}
+function diaryPage(){
+  const tabs=[['self','feather'],['other','raven']].map(([side,motif])=>
+    '<button type="button" class="diary-cover" id="diaryTab-'+side+'" aria-pressed="'+(side===diarySide)+
+    '" aria-controls="diaryEntries" onclick="selectDiarySide(\''+side+'\')">'+icon(motif)+
+    '<span>'+esc(diaryOwnerTitle(side))+'</span></button>').join('');
+  const entries=[...state.diary[diarySide]].sort((a,b)=>b.time-a.time);
+  const list=entries.slice(0,diaryLimits[diarySide]).map(entry=>'<button class="diary-entry" onclick="openDiaryEntry(\''+diarySide+'\',\''+
+    entry.id+'\')">'+diaryTime(entry.time)+(entry.title?'<strong class="diary-title">'+esc(entry.title)+'</strong>':'')+
+    '<span class="diary-preview">'+esc(entry.text.slice(0,160))+'</span></button>').join('');
+  const empty=diarySide==='other'&&!state.diaryCards.length
+    ? '<button class="secondary full" onclick="openDiaryLibrary()">添加日记字卡</button>'
+    : '<div class="diary-empty">暂无记录</div>';
+  const write=diarySide==='self'?ib('plus','onclick="editDiaryEntry()"','写日记'):'';
+  return header('日记','',write)+'<nav class="diary-spread" aria-label="日记归属">'+tabs+'</nav>'+
+    '<section class="diary-list" id="diaryEntries" aria-labelledby="diaryTab-'+diarySide+'">'+(list||empty)+
+    (entries.length>diaryLimits[diarySide]?'<button class="history-more" type="button" onclick="loadMoreDiary()">查看更早日记</button>':'')+'</section>';
+}
+function openDiaryLibrary(){
+  settingsTab='diary';
+  go('settings');
+}
+function openDiaryEntry(side,id){
+  const entry=state.diary[side].find(item=>item.id===id);
+  if(!entry)return;
+  const edit=side==='self'?'<button class="secondary" id="diaryEdit">编辑</button>':'';
+  modal(esc(entry.title||diaryOwnerTitle(side)),
+    '<article class="diary-paper">'+diaryTime(entry.time)+'<p>'+esc(entry.text)+'</p></article>'+
+    '<div class="actions">'+edit+'<button class="danger" id="diaryDelete">删除</button></div>');
+  if(side==='self')$('#diaryEdit').onclick=()=>editDiaryEntry(id);
+  $('#diaryDelete').onclick=()=>confirmAction('删除这篇日记？',()=>{
+    state.diary[side]=state.diary[side].filter(item=>item.id!==id);
+    save();
+    render();
+  });
+}
+
+let diaryDraftTimer=null;
+function cacheDiaryDraft(){
+  try{sessionStorage.setItem('private-local-diary-draft',JSON.stringify(state.diary.draft))}catch{}
+}
+function restoreDiaryDraft(){
+  try{
+    const draft=JSON.parse(sessionStorage.getItem('private-local-diary-draft'));
+    if(draft&&typeof draft.title==='string'&&typeof draft.text==='string')state.diary.draft=draft;
+  }catch{}
+}
+function saveDiaryDraft(){
+  clearTimeout(diaryDraftTimer);
+  diaryDraftTimer=null;
+  save();
+}
+window.addEventListener('pagehide',()=>{
+  if(diaryDraftTimer!==null)saveDiaryDraft();
+});
+function editDiaryEntry(id){
+  const diary=state.diary;
+  const entry=diary.self.find(item=>item.id===id);
+  const content=entry||diary.draft;
+  modal(entry?'编辑日记':'写日记',
+    '<form class="diary-form" id="diaryForm"><label class="field"><span>标题（选填）</span>'+
+    '<input id="diaryTitle" maxlength="60" value="'+esc(content.title)+'"></label>'+
+    '<label class="field"><span>正文</span><textarea id="diaryText" aria-label="正文" rows="7" required>'+
+    esc(content.text)+'</textarea></label><button class="primary full" type="submit">保存</button></form>');
+  const form=$('#diaryForm'),titleInput=$('#diaryTitle'),textInput=$('#diaryText');
+  if(!entry)form.oninput=()=>{
+    diary.draft={title:titleInput.value,text:textInput.value};
+    cacheDiaryDraft();
+    clearTimeout(diaryDraftTimer);
+    diaryDraftTimer=setTimeout(saveDiaryDraft,500);
+  };
+  form.onsubmit=event=>{
+    event.preventDefault();
+    const title=titleInput.value.trim(),text=textInput.value.trim();
+    if(!text)return toast('请填写正文');
+    if(entry){
+      Object.assign(entry,{title,text});
+      save();
+    }else{
+      diary.self.push({id:uid(),title,text,time:Date.now()});
+      diary.draft={title:'',text:''};
+      cacheDiaryDraft();
+      saveDiaryDraft();
+    }
+    closeModal();
+    render();
+  };
+}
+
 let mailboxTab='sent';
 function lettersPage(){let incoming=mailboxTab==='received',rows=incoming?state.incomingLetters:state.letters;return header('信箱','',ib('plus','onclick="composeLetter()"','寄信'))+'<div class="mail-tabs"><button class="'+(!incoming?'active':'')+'" onclick="mailboxTab=\'sent\';render()">我寄出的</button><button class="'+(incoming?'active':'')+'" onclick="mailboxTab=\'received\';render()">对方寄来的</button></div><div class="mail-actions"><button onclick="mailSettings()">来信设置</button></div>'+[...rows].reverse().map(l=>'<button class="letter-card '+(!incoming&&l.deliveredAt!==null||incoming&&l.readAt===null?'letter-replied':'')+'" onclick="'+(incoming?'readIncoming':'readLetter')+'(\''+l.id+'\')"><span class="letter-seal">'+icon('feather')+'</span><span class="letter-summary"><strong>'+esc(l.text.slice(0,45))+'</strong><span>'+esc(new Date(l.sentAt).toLocaleDateString('zh-CN'))+' · '+(incoming?(l.readAt===null?'未读来信':'已读来信'):(l.deliveredAt!==null?'已回信':'等待回信'))+'</span></span></button>').join('')+(!rows.length?'<div class="empty">'+(incoming?'等待一封来信':'寄出一封信')+'</div>':'')}
 function composeLetter(){modal('投递信封','<textarea id="letterText" rows="8" aria-label="信件内容" placeholder="把想说的话写在这里…"></textarea><div class="actions"><button class="primary" id="postLetter">投递</button></div>');$('#postLetter').onclick=()=>{let text=$('#letterText').value.trim();if(!text)return toast('先写一些内容');if(postLetter(text)){mailboxTab='sent';closeModal();render();toast('已投递')}}}
@@ -1301,7 +1724,7 @@ function deliverLetters(now){
   const other=state.people[0].name;
   for(const letter of state.letters){
     if(letter.deliveredAt===null&&letter.dueAt<=now){
-      letter.deliveredAt=now;
+      letter.deliveredAt=letter.dueAt;
       changed=true;
       notify(other,'收到一封回信');
     }
@@ -1562,13 +1985,13 @@ function cardParagraph(parts){
     /[。！？!?…~～；;：:，,、.”’」』）》】]$/u.test(text)?text:text+'。'
   ).join('');
 }
-function randomCardTexts(pool,count){
-  const available=[...pool],texts=[];
-  while(available.length&&texts.length<count){
+function sampleItems(pool,count){
+  const available=[...pool],chosen=[];
+  while(available.length&&chosen.length<count){
     const index=Math.floor(Math.random()*available.length);
-    texts.push(available.splice(index,1)[0].text);
+    chosen.push(available.splice(index,1)[0]);
   }
-  return texts;
+  return chosen;
 }
 function eligibleMailCards(){
   return eligible().filter(card=>card.text.trim());
@@ -1576,12 +1999,14 @@ function eligibleMailCards(){
 function combineMailCards(pool=eligibleMailCards()){
   if(!pool.length)return '';
   const count=Math.floor(rand(1,Math.min(18,pool.length)+1));
-  const cards=randomCardTexts(pool,count).map(mailParagraph);
+  const cards=sampleItems(pool,count).map(card=>card.text);
   const endings=['。','！','？','……'];
-  const separators=['，','；',...endings];
-  return cards.map((text,index)=>{
+  return punctuatedParagraph(cards,endings,['，','；',...endings]);
+}
+function punctuatedParagraph(parts,endings,separators){
+  return parts.map(mailParagraph).map((text,index)=>{
     if(/[。！？!?…~～；;：:，,、.]["'”’」』）》】）)\]]*$/u.test(text))return text;
-    return text+pick(index===cards.length-1?endings:separators);
+    return text+pick(index===parts.length-1?endings:separators);
   }).join('');
 }
 function mailSettings(){modal('来信设置','<label class="row"><span>对方主动来信</span><input class="toggle" id="incomingMailEnabled" type="checkbox" '+(state.settings.incomingMail?'checked':'')+'></label><div class="section-label">来信间隔 · 天</div><div class="two"><label class="field"><span>最短</span><input id="mailMin" type="number" min="1" max="7" step="1" value="'+state.settings.mailMinDays+'"></label><label class="field"><span>最长</span><input id="mailMax" type="number" min="1" max="7" step="1" value="'+state.settings.mailMaxDays+'"></label></div><button class="primary full" id="saveMailSettings">保存</button>');$('#saveMailSettings').onclick=()=>{let s=state.settings,min=Math.max(1,Math.min(7,Number($('#mailMin').value)||1)),max=Math.max(min,Math.min(7,Number($('#mailMax').value)||7)),enabled=$('#incomingMailEnabled').checked;if(s.mailMinDays!==min||s.mailMaxDays!==max||s.incomingMail!==enabled)s.nextIncomingMail=0;s.mailMinDays=min;s.mailMaxDays=max;s.incomingMail=enabled;ensureIncomingMail();save();scheduleChatRuntime();closeModal()}}
@@ -1598,7 +2023,7 @@ function readIncoming(id){
   });
   render();
 }
-function nextMidnight(){let date=new Date();return new Date(date.getFullYear(),date.getMonth(),date.getDate()+1).getTime()}
+function nextMidnight(now=Date.now()){let date=new Date(now);return new Date(date.getFullYear(),date.getMonth(),date.getDate()+1).getTime()}
 function ensureDailyCover(){
   const date=todayText(),pool=eligible();
   const cover=state.cover,record=state.moodDays[date]||{};
@@ -1606,7 +2031,7 @@ function ensureDailyCover(){
   const updateCover=cover.date!==date||(cover.waitingForCards&&pool.length>0);
   if(!updateCover&&previous?.time!=null)return false;
   if(updateCover){
-    const texts=pool.length&&Math.random()>=.28?randomCardTexts(pool,Math.floor(rand(1,3))):[];
+    const texts=pool.length&&Math.random()>=.28?sampleItems(pool,Math.floor(rand(1,3))).map(card=>card.text):[];
     state.cover={date,texts,waitingForCards:!pool.length};
   }
   record.other={
